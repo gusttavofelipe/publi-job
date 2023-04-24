@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'news',
     'vacancies',
 ]
+# Django Summernote
+INSTALLED_APPS += ('django_summernote', )
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,8 +130,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATICFILES = (os.path.join(BASE_DIR, 'templates/static'),)
-# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
+STATICFILES = (os.path.join(BASE_DIR, 'templates/static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'templates/static'),)
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
