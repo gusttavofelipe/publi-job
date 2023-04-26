@@ -1,3 +1,18 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.views import View
+from django.views.generic.list import ListView
+
+
+
+class VacancieHome(ListView): pass
+
+
+class VacancieDetail(View): pass
+
+
+class VacancieSearch(ListView): pass
+
+
+class VacancieCategory(ListView): pass
+
