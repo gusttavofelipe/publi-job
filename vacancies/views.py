@@ -7,20 +7,17 @@ from django.views import View
 from django.views.generic.list import ListView
 
 
-
 class VacancieHome(ListView):
     model = Vacancie
     template_name = 'vacancies/index.html'
-
-    def get_queryset(self):
-        HttpResponse('Youre looking at question')
+    context_object_name = 'vacancies'
 
 
 class VacancieDetail(View): pass
 
 
-class VacancieSearch(ListView): pass
+class VacancieSearch(VacancieHome): pass
 
 
-class VacancieCategory(ListView): pass
+class VacancieCategory(VacancieHome): pass
 
