@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'categories',
     'news',
     'vacancies',
+    'user',
+    'crispy_forms',
 ]
 # Django Summernote
 INSTALLED_APPS += ('django_summernote', )
