@@ -1,1 +1,28 @@
 {% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            {% for vacancie in vacancies %}
+                <div class="shadow-sm p-3 mb-5 ml-4 rounded border" style="width: 261px; height: 247px;">
+                        <p>
+                            {{ vacancie.name }} | <br>
+                            {{ vacancie.city }} - {{ vacancie.state }}
+                            | {{ vacancie.number }} <br>
+                            vaga(s) 
+                            <p class="pt-4"> {{ vacancie.occupation_area }} </p> 
+                            <p class="pt-4"> Emprego em {{ vacancie.city }} / {{ vacancie.state }}</p> 
+                        </p>
+
+                        {% if vacancie.img %}
+                            <p><img src="{{ vacancie.img.url }}" alt=""></p>
+                        {% endif %}
+                </div>
+            {% endfor %}                
+        </div>        
+    </div>
+</div>
+
+{% endblock content %}
