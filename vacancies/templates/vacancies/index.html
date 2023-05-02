@@ -7,7 +7,7 @@
         <div class="row">
             {% for vacancie in vacancies %}
                 <div class="shadow-sm p-3 mb-5 ml-4 rounded border" style="width: 261px; height: 247px;">
-                        <p>
+                        <p id="par">
                             {{ vacancie.name }} | <br>
                             {{ vacancie.city }} - {{ vacancie.state }}
                             | {{ vacancie.number }} <br>
@@ -25,4 +25,6 @@
     </div>
 </div>
 
-{% endblock content %}
+{% endblock content %}    
+
+
