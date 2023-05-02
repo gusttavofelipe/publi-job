@@ -5,22 +5,14 @@
     {% include 'parciais/head.html' %}
 </head>
 <body>        
-    {% block content %}
-        <nav>
+    {% include 'parciais/_nav.html' %}
 
-        </nav>
-            <main>
-                <div class="container">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Eos, suscipit! Exercitationem delectus nesciunt 
-                        voluptatem magnam tempore consequuntur blanditiis, ea fu
-                        a minus commodi facere totam amet! Expedita repel
-                        lendus esse tenetur magni?
-                    </p>
-                </div>
-            </main>
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
 
-            {% include 'parciais/footer.html' %}
-    {% endblock content %}
+    {% include 'parciais/footer.html' %}
+
 </body>
 </html>
