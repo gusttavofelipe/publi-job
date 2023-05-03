@@ -3,30 +3,32 @@
 
 {% block content %}
 
-
 <div class="container-fluid">
     <div class="container">
         <div class="row">
             {% for vacancie in vacancies %}
-                <div class="shadow-sm p-3 mb-5 ml-4 rounded border" style="width: 261px; height: 247px;">
-                    <p id="parr">
-                        {{ vacancie.name }} | <br>
-                        {{ vacancie.city }} - {{ vacancie.state }}
-                        | {{ vacancie.number }} <br>
-                        vaga(s) 
-                        <p class="pt-4"> {{ vacancie.occupation_area }} </p> 
-                        <p class="pt-4"> Emprego em {{ vacancie.city }} / {{ vacancie.state }}</p> 
-                    </p>
+                <div class="col-sm-3">
+                    <div class="shadow-sm p-3 mb-5 rounded border">
+                        <p id="parr">
+                            {{ vacancie.name }} | <br>
+                            {{ vacancie.city }} - {{ vacancie.state }}
+                            | {{ vacancie.number }} <br>
+                            vaga(s) 
+                            <p class="pt-4"> {{ vacancie.occupation_area }} </p> 
+                            <p class="pt-4"> Emprego em {{ vacancie.city }} / {{ vacancie.state }}</p> 
+                        </p>
 
-                    {% if vacancie.img %}
-                        <p><img src="{{ vacancie.img.url }}" alt=""></p>
-                    {% endif %}
+                        {% if vacancie.img %}
+                            <p><img src="{{ vacancie.img.url }}" alt=""></p>
+                        {% endif %}
+                    </div>
                 </div>
             {% endfor %}                
-        </div>        
-    </div>
+        </div> 
+    </div>       
 </div>
 
 {% endblock content %}    
 
+{% comment %} <div class="shadow-sm p-3 mb-5 ml-4 rounded border" style="width: 261px; height: 247px;"> {% endcomment %}
 

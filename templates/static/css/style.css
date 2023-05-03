@@ -1,7 +1,8 @@
-/* p{
-    background-color: rgb(54, 19, 167)!important;
-} */
+#parr{
+    background-color: rgb(19, 86, 167)!important;
+}
 
-.pl-5 {
-    padding-left: 250px!important;
+.img-fluid{
+    max-width: 100%;
+    height: auto;
 }
