@@ -1,23 +1,23 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from vacancies.models import Vacancie
+from vacancies.models import Vacancy
 
 from django.views import View
 from django.views.generic.list import ListView
 
 
-class VacancieHome(ListView):
-    model = Vacancie
+class VacancyHome(ListView):
+    model = Vacancy
     template_name = 'vacancies/index.html'
     context_object_name = 'vacancies'
 
 
-class VacancieDetail(View): pass
+class VacancyDetail(View): pass
 
 
-class VacancieSearch(VacancieHome): pass
+class VacancySearch(VacancyHome): pass
 
 
-class VacancieCategory(VacancieHome): pass
+class VacancyCategory(VacancyHome): pass
 

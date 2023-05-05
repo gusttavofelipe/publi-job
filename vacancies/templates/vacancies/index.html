@@ -6,10 +6,10 @@
 <div class="container-fluid">
     <div class="container">
         <div class="row">
-            {% for vacancie in vacancies %}
+            {% for vacancy in vacancies %}
                 <div class="col-sm-3">
                     <div class="shadow p-3 mb-5 rounded border-bottom-0">
-                        <p id="vacancie-descri" class="">
+                        <p id="vacancy-descri">
                             <small>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
                                     <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
@@ -17,29 +17,29 @@
                                   </svg>
                             </small>
                             <small id="date-sm">
-                                {{vacancie.date_posted|date:"M d, Y"}}
+                                {{vacancy.date_posted|date:"M d, Y"}}
                             </small><br>
                             <a href="" class="link-descri">
-                                {{ vacancie.name }} |<br>
-                                {{ vacancie.city }} - {{ vacancie.state }}
-                                | {{ vacancie.number }} <br>
+                                {{ vacancy.name }} |<br>
+                                {{ vacancy.city }} - {{ vacancy.state }}
+                                | {{ vacancy.number }} <br>
                                 vaga(s)
                             </a> 
 
                             <p><a href="#" class=" link-descri p-1  border rounded text-white pl-2 pr-2" id="occopation">
-                                {{ vacancie.get_occupation_area_display }}</a>
+                                {{ vacancy.get_occupation_area_display }}</a>
                             </p>
                                 
                             <p class="p-1">
                                 <small id="job-sm">Emprego em 
-                                <a href="">{{ vacancie.city }}</a> / 
-                                <a href="">{{ vacancie.state }}
+                                <a href="">{{ vacancy.city }}</a> / 
+                                <a href="">{{ vacancy.state }}
                                 </small></a>
                             </p> 
                         </p>
 
-                        {% if vacancie.img %}
-                            <p><img src="{{ vacancie.img.url }}" alt=""></p>
+                        {% if vacancy.img %}
+                            <p><img src="{{ vacancy.img.url }}" alt=""></p>
                         {% endif %}
                     </div>
                 </div>

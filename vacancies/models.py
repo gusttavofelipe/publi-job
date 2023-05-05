@@ -9,7 +9,7 @@ from choices.type_choices import TYPE_CHOICES
 from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 
 
-class Vacancie(models.Model):
+class Vacancy(models.Model):
     name = models.CharField('Name', max_length=255)
     categorie = models.ForeignKey(Categorie, on_delete=models.DO_NOTHING)
     occupation_area = models.CharField(
