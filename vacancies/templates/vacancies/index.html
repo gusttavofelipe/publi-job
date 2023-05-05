@@ -8,14 +8,34 @@
         <div class="row">
             {% for vacancie in vacancies %}
                 <div class="col-sm-3">
-                    <div class="shadow-sm p-3 mb-5 rounded border">
-                        <p id="parr">
-                            {{ vacancie.name }} | <br>
-                            {{ vacancie.city }} - {{ vacancie.state }}
-                            | {{ vacancie.number }} <br>
-                            vaga(s) 
-                            <p class="pt-4"> {{ vacancie.occupation_area }} </p> 
-                            <p class="pt-4"> Emprego em {{ vacancie.city }} / {{ vacancie.state }}</p> 
+                    <div class="shadow p-3 mb-5 rounded border-bottom-0">
+                        <p id="vacancie-descri" class="">
+                            <small>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
+                                    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+                                    <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                  </svg>
+                            </small>
+                            <small id="date-sm">
+                                {{vacancie.date_posted|date:"M d, Y"}}
+                            </small><br>
+                            <a href="" class="link-descri">
+                                {{ vacancie.name }} |<br>
+                                {{ vacancie.city }} - {{ vacancie.state }}
+                                | {{ vacancie.number }} <br>
+                                vaga(s)
+                            </a> 
+
+                            <p><a href="#" class=" link-descri p-1  border rounded text-white pl-2 pr-2" id="occopation">
+                                {{ vacancie.get_occupation_area_display }}</a>
+                            </p>
+                                
+                            <p class="p-1">
+                                <small id="job-sm">Emprego em 
+                                <a href="">{{ vacancie.city }}</a> / 
+                                <a href="">{{ vacancie.state }}
+                                </small></a>
+                            </p> 
                         </p>
 
                         {% if vacancie.img %}
@@ -29,6 +49,3 @@
 </div>
 
 {% endblock content %}    
-
-{% comment %} <div class="shadow-sm p-3 mb-5 ml-4 rounded border" style="width: 261px; height: 247px;"> {% endcomment %}
-
