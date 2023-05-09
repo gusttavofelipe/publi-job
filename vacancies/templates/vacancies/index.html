@@ -4,7 +4,12 @@
 {% block content %}
 
 <div class="container-fluid">
+    
     <div class="container">
+        {% for category in categories %}
+            <p>category/</p> 
+        {% endfor %}
+
         <div class="row">
             {% for vacancy in vacancies %}
                 <div class="col-sm-3">
@@ -45,7 +50,7 @@
                 </div>
             {% endfor %}                
         </div> 
-    </div>       
+    </div>
 </div>
 
 {% endblock content %}    

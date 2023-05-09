@@ -2,7 +2,7 @@ from django.db import models
 from PIL import Image
 import os
 from django.conf import settings
-from categories.models import Categorie
+from categories.models import Category
 
 from choices.stt_choices import STATE_CHOICES
 from choices.type_choices import TYPE_CHOICES
@@ -11,7 +11,7 @@ from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 
 class Vacancy(models.Model):
     name = models.CharField('Name', max_length=255)
-    categorie = models.ForeignKey(Categorie, on_delete=models.DO_NOTHING)
+    categorie = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     occupation_area = models.CharField(
         'Occupation area',
         max_length=3,
