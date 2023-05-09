@@ -1,5 +1,7 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 
 from vacancies.models import Vacancy
 from categories.models import Category
@@ -22,5 +24,5 @@ class VacancySearch(VacancyHome): pass
 
 class VacancyCategory(VacancyHome):
     model = Category
+    template_name = 'vacancies/vacancy_category.html'
     context_object_name = 'categories'
-
