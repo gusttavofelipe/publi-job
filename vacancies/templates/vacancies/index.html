@@ -6,10 +6,9 @@
 <div class="container-fluid">
     
     <div class="container">
+
         {% for category in categories %}
-            <p>
-                <a href="{% url 'vacancy_category' category.name %}"> {{category.name}} </a>
-            </p>
+            <p><a href="{% url 'vacancy_category' category.name %}">{{ category.name }}</a></p>
         {% endfor %}
 
         <div class="row">
