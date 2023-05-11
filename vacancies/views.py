@@ -1,6 +1,5 @@
 from vacancies.models import Vacancy
 from categories.models import Category
-from django.db.models import Q, Value
 
 
 from django.views import View
@@ -25,7 +24,5 @@ class VacancyCategory(VacancyHome):
     def get_queryset(self):
         category = self.kwargs.get('category', None)
 
-        qs = Vacancy.objects.all()
-        qs = qs.filter(category=category)
-        
+        qs = Vacancy.objects.filter(category__name=category)        
         return qs
