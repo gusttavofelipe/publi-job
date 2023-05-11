@@ -6,16 +6,17 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px!important;
 }
-
-
+.custom-bu {
+    width: 155px !important;
+}
 p{
     font-size: large;
 }
 
-/* .img-fluid{
-    padding-left: 30px;
-    padding-right: auto;
-} */
+.img-fluid{
+    max-width: 100%!important;
+    height: auto!important;
+}
 
 .form-font{
     font-family: 'Source Sans Pro', sans-serif!important;
