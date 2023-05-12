@@ -3,89 +3,77 @@
 
 {% block content %}
 
-<div class="container-fluid">
-  <div class="container">
-    <img src="{% static 'img/ibanner.png' %}" class="img-fluid" alt="">
-    <div class="btn-group" role="group" aria-label="Button group with nested dropdown">     
-      <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-        </div>
-      </div>
-      <div class="btn-group" role="group">
-        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </button>
-        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-          <a class="dropdown-item" href="#">Dropdown link</a>
-          <a class="dropdown-item" href="#">Dropdown link</a>
-        </div>
-      </div>
+<div class="container-fluid mb-1">
+    <div class="container-fluid bg-dark mob">
+        <img src="{% static 'img/ba.png' %}" class="img-fluid" alt="">
     </div>
-  </div>
-    
+    <div class="inline">
+        <h1 class="title-b text-center">Conecte-se com oportunidades</h1>
+        <h2 class="title-b text-center mb">Procure por vagas aqui</h2>
+    </div>
+
+
     <div class="container">
-          <div class="input-group mb-3 mt-5">
+        <div class="input-group mb-3 mt">
             <div class="input-group-prepend">
-              <button type="button" class="btn btn-dark">Ação</button>
-              <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              </button>
-              <div class="dropdown-menu">
-                {% for category in categories %}
-                    <a href="{% url 'vacancy_category' category.name %}"
-                    class="dropdown-item">
-                    {{ category.name }}</a>
-                {% endfor %}
-              </div>
+                <button type="button" class="btn btn-dark">Ação</button>
+                <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu">
+                    {% for category in categories %}
+                    <a href="{% url 'vacancy_category' category.name %}" class="dropdown-item">
+                        {{ category.name }}</a>
+                    {% endfor %}
+                </div>
             </div>
-            <input type="text" class="form-control" aria-label="Input dropdown com botão dropdown segmentado">
-          </div>
-            
+            <input type="text" class="form-control" >
+        </div>
+
         <div class="row">
             {% for vacancy in vacancies %}
-                <div class="col-sm-3">
-                    <div class="shadow p-3 mb-5 rounded border-bottom-0">
-                        <p id="vacancy-descri">
-                            <small>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar3" viewBox="0 0 16 16">
-                                    <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
-                                    <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                                  </svg>
-                            </small>
-                            <small id="date-sm">
-                                {{vacancy.date_posted|date:"M d, Y"}}
-                            </small><br>
-                            <a href="" class="link-descri">
-                                {{ vacancy.name }} |<br>
-                                {{ vacancy.city }} - {{ vacancy.state }}
-                                | {{ vacancy.number }} <br>
-                                vaga(s)
-                            </a> 
+            <div class="col-sm-3">
+                <div class="shadow p-3 mb-5 rounded border-bottom-0">
+                    <p id="vacancy-descri">
+                        <small>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-calendar3" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z" />
+                                <path
+                                    d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+                            </svg>
+                        </small>
+                        <small id="date-sm">
+                            {{vacancy.date_posted|date:"M d, Y"}}
+                        </small><br>
+                        <a href="" class="link-descri">
+                            {{ vacancy.name }} |<br>
+                            {{ vacancy.city }} - {{ vacancy.state }}
+                            | {{ vacancy.number }} <br>
+                            vaga(s)
+                        </a>
 
-                            <p><a href="#" class=" link-descri p-1  border rounded text-white pl-2 pr-2" id="occopation">
-                                {{ vacancy.get_occupation_area_display }}</a>
-                            </p>
-                                
-                            <p class="p-1">
-                                <small id="job-sm">Emprego em 
-                                <a href="">{{ vacancy.city }}</a> / 
-                                <a href="">{{ vacancy.state }}
-                                </small></a>
-                            </p> 
-                        </p>
+                    <p><a href="#" class=" link-descri p-1  border rounded text-white pl-2 pr-2" id="occopation">
+                            {{ vacancy.get_occupation_area_display }}</a>
+                    </p>
 
-                        {% if vacancy.img %}
-                            <p><img src="{{ vacancy.img.url }}" alt=""></p>
-                        {% endif %}
-                    </div>
+                    <p class="p-1">
+                        <small id="job-sm">Emprego em
+                            <a href="">{{ vacancy.city }}</a> /
+                            <a href="">{{ vacancy.state }}
+                        </small></a>
+                    </p>
+                    </p>
+
+                    {% if vacancy.img %}
+                    <p><img src="{{ vacancy.img.url }}" alt=""></p>
+                    {% endif %}
                 </div>
-            {% endfor %}                
-        </div> 
+            </div>
+            {% endfor %}
+        </div>
     </div>
 </div>
 
-{% endblock content %}    
+{% endblock content %}
