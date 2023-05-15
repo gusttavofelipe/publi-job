@@ -70,7 +70,7 @@ p{
 }
 
 .mt{
-    margin-top: 300px!important;
+    margin-top: 100px!important;
 }
 
 .banner-title{
@@ -83,13 +83,12 @@ p{
 }
 
 .btn-success{
-    font-weight: bold;
-    background-color: rgb(33, 155, 41)!important;
+    background: rgb(35,167,43);
+    background: linear-gradient(0deg, rgba(35,167,43,1) 0%, rgba(56,176,64,1) 100%);
 }
 
 .text-success {
-    color: rgb(14,126,21)!important;
-    font-weight: bold;
+    color: rgb(22, 138, 30)!important;
 }
 
 .title-link:hover {
@@ -109,6 +108,10 @@ p{
     font-size: 15px;
 }
 
+.text-top:hover{
+    color: rgb(145, 145, 145);
+}
+
 @media only screen and (max-width: 767px) {
     .img-fluid{
         max-width: 100%!important;
@@ -118,7 +121,9 @@ p{
     .banner-title{
         display: none!important;
     }
-
+    .mt{
+        margin-top: 50px!important;
+    }
 }
 
 @media only screen and (min-width: 768px) {
