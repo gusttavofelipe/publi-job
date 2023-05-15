@@ -92,10 +92,13 @@ p{
     font-weight: bold;
 }
 
-
 .title-link:hover {
     text-decoration: none;
-  }
+}
+
+.input-group{
+    width: 100%!important;
+}
 
 @media only screen and (max-width: 767px) {
     .img-fluid{
