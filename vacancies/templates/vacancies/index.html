@@ -4,19 +4,27 @@
 {% block content %}
 
 <div class="container-fluid mb-1">
-    <div class="container-fluid bg-dark mob">
+    <div class="container-fluid bg-banner flex">
         <img src="{% static 'img/ba.png' %}" class="img-fluid" alt="">
+        <div class="banner-title">
+            <h1 class="banner-title main-text text-center">
+                <a href="#" class="title-link border rounded text-white p-1 shadow rounded">Connect</a> 
+                with Opportunities
+            </h1>
+            <h2 class="banner-title text-center">Search for vacancies here</h2>
+        </div>
     </div>
-    <div class="inline">
-        <h1 class="title-b text-center">Conecte-se com oportunidades</h1>
-        <h2 class="title-b text-center mb">Procure por vagas aqui</h2>
-    </div>
-
 
     <div class="container">
         <div class="input-group mb-3 mt">
             <div class="input-group-prepend">
-                <button type="button" class="btn btn-dark">Ação</button>
+                <button type="button" class="btn btn-dark">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                     viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0
+                         1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg>
+                </button>
                 <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 </button>
@@ -27,7 +35,7 @@
                     {% endfor %}
                 </div>
             </div>
-            <input type="text" class="form-control" >
+            <input type="text" class="form-control">
         </div>
 
         <div class="row">

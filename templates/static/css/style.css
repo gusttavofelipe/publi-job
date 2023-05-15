@@ -6,9 +6,7 @@
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px!important;
 }
-/* .custom-bu {
-    width: 155px !important;
-} */
+
 p{
     font-size: large;
 }
@@ -59,56 +57,83 @@ p{
     text-decoration: none!important;
 }
 
-.bg-dark {
-    background-color: #596066!important;
+.bg-banner {
+    background: rgb(54,201,91);
+    background: radial-gradient(circle,
+     rgba(54,201,91,0.9640231092436975)
+     0%, rgba(26,59,35,0.9136029411764706) 100%);
 }
 
-.inline{
-    display: inline;
+.flex{
+    display: flex;
+    align-items: center;
 }
-
 
 .mt{
     margin-top: 300px!important;
 }
 
+.banner-title{
+    font-family: 'Roboto Condensed', sans-serif;
+    padding-left: 20px;
+}
+
+.main-text{
+    font-weight: bold;
+}
+
+.btn-success{
+    font-weight: bold;
+    background-color: rgb(33, 155, 41)!important;
+}
+
+.text-success {
+    color: rgb(14,126,21)!important;
+    font-weight: bold;
+}
+
+
+.title-link:hover {
+    text-decoration: none;
+  }
+
+@media only screen and (max-width: 767px) {
+    .img-fluid{
+        max-width: 100%!important;
+        height: auto!important;
+        padding-right: auto;
+    }
+    .banner-title{
+        display: none!important;
+    }
+
+}
 
 @media only screen and (min-width: 768px) {
     .img-fluid{
         max-width: 100%!important;
         height: auto!important;
-        padding-left: 18%;
+        padding-left: 2%;
         padding-right: auto;
     }
 
-}
-  
-
-@media only screen and (min-width: 912px) {
-.img-fluid{
-    max-width: 100%!important;
-    height: auto!important;
-    padding-left: 22%;
-    padding-right: auto;
-}
-
-}
-
-@media only screen and (min-width: 1024px) {
-    .img-fluid{
-        max-width: 100%!important;
-        height: auto!important;
-        padding-left: 24%;
-        padding-right: auto;
-    }
-    
 }
 
 @media only screen and (min-width: 1190px) {
     .img-fluid{
         max-width: 100%!important;
         height: auto!important;
-        padding-left: 27%;
+        padding-left: 8%;
+        padding-right: auto;
+    }
+    
+}
+
+@media only screen and (min-width: 1400px) {
+    .img-fluid{
+        max-width: 100%!important;
+        height: auto!important;
+        padding-left: 21%;
         padding-right: auto;
     }
     
