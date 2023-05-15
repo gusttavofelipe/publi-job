@@ -100,6 +100,15 @@ p{
     width: 100%!important;
 }
 
+.top-bar{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.text-top{
+    color: rgb(176, 176, 176);
+    font-size: 15px;
+}
+
 @media only screen and (max-width: 767px) {
     .img-fluid{
         max-width: 100%!important;
