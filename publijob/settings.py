@@ -50,7 +50,13 @@ INSTALLED_APPS = [
     'vacancies',
     'user',
     'crispy_forms',
+    'crispy_bootstrap3',
 ]
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap3"
+
+CRISPY_TEMPLATE_PACK = "bootstrap3"
+
 # Django Summernote
 INSTALLED_APPS += ('django_summernote', )
 X_FRAME_OPTIONS = 'SAMEORIGIN'

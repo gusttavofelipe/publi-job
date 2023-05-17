@@ -30,66 +30,15 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" href="#"
-                 data-toggle="modal" data-target="#myModal">Sign In</a>                  
+                <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" 
+                href="{% url 'vacancy_login' %}">Sign In</a>                  
             </li>
             <li class="nav-item hover-effect">
-                <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button" href="#" data-toggle="modal"
-                 data-target="#myModal">Send vacancy</a>
+                <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
+                 href="{% url 'vacancy_form' %}">Send vacancy</a>
             </li>
         </ul>
-    </div>
-
-            <!-- The Modal -->
-    <div class="modal" id="myModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Customer Sign In</h4>
-                    <button type="button" class="close" data-dismiss="modal"></button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-                    <form>
-                        <label class="sr-only" for="usrname">Username</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Email" aria-label="Username"
-                            aria-describedby="basic-addon1">
-                        </div>
-
-
-                        <label class="sr-only" for="Password">Name</label>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-key"></i></span>
-                            </div>
-                            <input id="Password" type="password" class="form-control" placeholder="Password"
-                            aria-label="Password" aria-describedby="basic-addon2">
-                        </div>
-
-                        <p class="text-center p-2 mb-2 text-dark border rounded form-font">
-                            <img src=" {% static 'img/facebook.png' %}" class="ml-1" alt="">     Log in with Facebook</p>
-
-                        <p class="text-center p-2 mb-2 border rounded form-font">
-                            <img src=" {% static 'img/linkedin2.png' %}" alt="">    Log in with Linkedin</p>
-                    </form>
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-success form-font">Sign In</button>
-                    <button type="button" class="btn btn-danger form-font" data-dismiss="modal">Close</button>
-                </div>
-
-            </div>
-        </div>
-    </div>     
+    </div>   
 </nav>
 
 

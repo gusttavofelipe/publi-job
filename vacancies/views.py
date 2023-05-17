@@ -28,3 +28,8 @@ class VacancyCategory(VacancyHome):
 
 class VacancyForm(VacancyHome):
     template_name = 'vacancies/form.html'
+
+
+class VacancyLogin(VacancyHome):
+    template_name = 'vacancies/register.html'
+
