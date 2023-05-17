@@ -116,6 +116,21 @@ p{
     color: rgb(145, 145, 145);
 }
 
+/* .register-title{
+    padding: ;
+} */
+
+fieldset{
+    font-family: 'Roboto Condensed', sans-serif;
+    padding: 35px;
+    margin-bottom: 35px!important;
+}
+
+.container-form{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 19px!important;
+}
+
 @media only screen and (max-width: 767px) {
     .img-fluid{
         max-width: 100%!important;
@@ -137,6 +152,10 @@ p{
         height: auto!important;
         padding-left: 2%;
         padding-right: auto;
+    }
+
+    .container-form{
+        padding: 48px;
     }
 
 }

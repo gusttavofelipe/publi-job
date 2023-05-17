@@ -1,6 +1,4 @@
 from vacancies.models import Vacancy
-from categories.models import Category
-
 
 from django.views import View
 from django.views.generic.list import ListView
@@ -26,3 +24,7 @@ class VacancyCategory(VacancyHome):
 
         qs = Vacancy.objects.filter(category__name=category)        
         return qs
+
+
+class VacancyForm(VacancyHome):
+    template_name = 'vacancies/form.html'

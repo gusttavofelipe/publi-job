@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container container-form border rounded shadow mb-5 mt-5">
+    <h1 class="register-title p-2 pb-4 font-weight-bold">User Registration</h1>
+    <form method="post" action="">
+        <fieldset class="form-group border rounded">
+            <legend class="text-success font-weight-bold">Personal data</legend>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">First name <strong class="text-danger">*</strong></label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input">
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Surname</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input">
+                </div>
+            </div>
+            <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1"
+                            checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                        <label class="form-check-label" for="gridRadios2">
+                            Female
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group border rounded ">
+            <legend class="text-success font-weight-bold">Contact details</legend>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">E-mail <strong class="text-danger">*</strong></label>
+                <div class="col-sm-10">
+                    <input type="email" class="form-control form-input" id="" placeholder="Email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">WhatsApp <strong class="text-danger">*</strong></label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control form-input" id="" placeholder="Only numbers">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Phone number</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control form-input" id="" placeholder="Only numbers">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="form-group border rounded ">
+            <legend class="text-success font-weight-bold">Profile</legend>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Occupation</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input" id="" placeholder="Email">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Schooling <strong class="text-danger">*</strong></label>
+                <div class="col-sm-10">
+                    <select class="custom-select custom-select-sm mb-3">
+                        <option selected>Select...</option>
+                        <option value="1">Elementary school</option>
+                        <option value="2">High School</option>
+                        <option value="3">Graduate school</option>
+                    </select>  
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">User type <strong class="text-danger">*</strong></label>
+                <div class="col-sm-10">
+                    <select class="custom-select custom-select-sm mb-3">
+                        <option selected>Select...</option>
+                        <option value="1">Legal person</option>
+                        <option value="2">Natural person</option>
+                    </select>
+                </div>
+            </div>
+            <div class="control">
+                <div class="form-group">
+                    <label for="">About you</label>
+                    <textarea class="form-control" rows="3" cols="50"></textarea>
+                    <small>Write a brief summary that describes you professionally.</small>
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group border rounded pr-4">
+            <legend class="text-success font-weight-bold">Address</legend>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Address</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input" placeholder="Street, number, etc...  ">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Zip code</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control form-input" placeholder="00000-00">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Neighborhood</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">City</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">State</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control form-input" id="" placeholder="Email">
+                </div>
+            </div>
+        </fieldset>
+        <fieldset class="form-group border rounded ">
+            <legend class="text-success font-weight-bold">Access  <strong class="text-danger">*</strong></legend>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control form-input">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">Repeat password</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control form-input">
+                </div>
+            </div>
+        </fieldset>
+        <input type="submit" class="btn btn-success mb-4" value="Register">
+    </form>
+</div>
+
+{% endblock content %}
