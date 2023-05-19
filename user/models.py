@@ -3,11 +3,8 @@ from choices.schooling_choices import SCHOOLING_CHOICES
 from choices.stt_choices import STATE_CHOICES
 
 
-class Account(models.Model):
-    first_name = models.CharField("First name", max_length=255)
-    surname = models.CharField("Surname", max_length=255)
+class Profile(models.Model):
     username = models.CharField("Username", max_length=255)
-    email = models.CharField("E-mail", max_length=255)
     whatsapp = models.IntegerField("WhatsApp")
     phone_number= models.IntegerField("Phone number")
     occupation = models.CharField("Occupation", max_length=255)
@@ -31,9 +28,7 @@ class Account(models.Model):
         max_length=2,
         choices=STATE_CHOICES
         )
-    password = models.CharField("Password", max_length=255)
-    repeat_password = models.CharField("Repeat password", max_length=255)
 
     def  __str__(self) -> str:
-        return self.username
+        return self.address
     
