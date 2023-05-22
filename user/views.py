@@ -16,7 +16,6 @@ class BaseRegister(View):
         self.profile = None
 
         if self.request.user.is_authenticated:  
-            self.profile = models.Profile.objects.filter(username_profile=self.request.user)
 
             self.context = {
                 'userform': forms.UserForm(
@@ -43,7 +42,7 @@ class BaseRegister(View):
         self.profileform = self.context['profileform']
     
         self.render = render(
-        self.request, self.template_name, self.context
+            self.request, self.template_name, self.context
         )
     
     def get(self, *args, **kwargs):
@@ -55,9 +54,9 @@ class UserRegister(BaseRegister):
         if not self.userform.is_valid() or not self.profileform.is_valid():
             return self.render
         
+        username = self.userform.cleaned_data.get('username')
         password = self.userform.cleaned_data.get('password')
 
-        # Usuário logado
         if not self.request.user.is_authenticated:
 
             user = self.userform.save(commit=False)
@@ -65,17 +64,18 @@ class UserRegister(BaseRegister):
             user.save()
 
             profile = self.profileform.save(commit=False)
-            profile.user = user
+            profile.username_profile = user
             profile.save()
 
         if password:
             check = authenticate(
                 self.request,
-                user=user,
+                username=username,
                 password=password
                 )
             if check:
                 login(self.request, user=user)
+
 
         messages.success(
             self.request,
@@ -93,34 +93,21 @@ class UserLogin(BaseRegister):
         password = self.request.POST.get('password')
 
         if not username or not password:
-            messages.error(
-                self.request,
-                'Usuário ou senha inválidos.'
-            )
             return redirect('user:user_login')
 
-        usuario = authenticate(
+        user = authenticate(
             self.request, username=username, password=password)
 
-        if not usuario:
-            messages.error(
-                self.request,
-                'Usuário ou senha inválidos.'
-            )
+        if not user:
             return redirect('user:user_login')
 
-        login(self.request, user=usuario)
-
-        messages.success(
-            self.request,
-            'Você fez login no sistema e pode concluir sua compra.'
-        )
+        login(self.request, user=user)
         return redirect('vacancies:home')
 
 
 class UserLogout(BaseRegister):
-    template_name = 'user/login.html'
+    # template_name = 'vacancies/index.html'
 
-    def post(self, *args, **kwargs):
+    def get(self, *args, **kwargs):
         logout(self.request)
         return redirect('vacancies:home')

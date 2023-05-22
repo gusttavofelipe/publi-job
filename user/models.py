@@ -7,10 +7,11 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     username_profile = models.OneToOneField(
-        User, on_delete=models.CASCADE, verbose_name='Username'
+        User, on_delete=models.CASCADE, verbose_name='Username',
+        null=True, blank=True
         )    
-    whatsapp = models.IntegerField("WhatsApp")
-    phone_number= models.IntegerField("Phone number")
+    whatsapp = models.PositiveBigIntegerField("WhatsApp")
+    phone_number= models.PositiveBigIntegerField("Phone number")
     occupation = models.CharField("Occupation", max_length=255)
     schooling = models.CharField(
         "Schooling",

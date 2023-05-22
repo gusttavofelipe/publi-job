@@ -1,3 +1,4 @@
+from __future__ import annotations
 from django import forms
 from django.contrib.auth.models import User
 from . import models
@@ -8,6 +9,7 @@ class ProfileForm(forms.ModelForm):
         model = models.Profile
         fields = '__all__'
         exclude = ('username_profile', )
+
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(
@@ -24,12 +26,13 @@ class UserForm(forms.ModelForm):
 
     def __init__(self, user=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
+
         self.user = user
 
     class Meta:
         model = User
         fields = ('first_name', 'last_name',
-                'username', 'email', 'password', 'password2'
+                'username', 'email', 'password', 'password2',
                 )
         
     def clean(self, *args, **kwargs):
@@ -51,26 +54,8 @@ class UserForm(forms.ModelForm):
         error_msg_password_short = 'Sua senha precisa de pelo menos 6 caracteres'
         error_msg_required_field = 'Este campo é obrigatório.'
 
-        # Usuários logados: atualização
-        if self.user:
-            if user_db:
-                if user_data != user_db.username:
-                    validation_error_msgs['username'] = error_msg_user_exists
-
-            if email_db:
-                if email_data != email_db.email:
-                    validation_error_msgs['email'] = error_msg_email_exists
-
-            if password_data:
-                if password_data != password2_data:
-                    validation_error_msgs['password'] = error_msg_password_match
-                    validation_error_msgs['password2'] = error_msg_password_match
-
-                if len(password_data) < 6:
-                    validation_error_msgs['password'] = error_msg_password_short
-
         # Usuários não logados: cadastro
-        else:
+        if not self.user:
             if user_db:
                 validation_error_msgs['username'] = error_msg_user_exists
 
