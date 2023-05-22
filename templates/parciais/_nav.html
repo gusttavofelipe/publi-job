@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 shadow-sm border rounded">         
     <li class="nav-item nav-link">
-        <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" class="" alt=""></a>
+        <a href="{% url 'vacancies:home' %}"><img src="{% static 'img/logo.png' %}" class="" alt=""></a>
     </li>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -29,13 +29,20 @@
                 <a class="nav-link" href="#">About</a>
             </li>
 
+        {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" 
-                href="{% url 'user_register' %}">Sign In</a>                  
+                href="{% url 'user:user_login' %}">Autenticado</a>                  
             </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" 
+                href="{% url 'user:user_login' %}">não Autenticado</a>                  
+            </li>
+        {% endif %}
             <li class="nav-item hover-effect">
                 <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
-                 href="{% url 'user_register' %}">Send vacancy</a>
+                 href="{% url 'user:user_register' %}">Send vacancy</a>
             </li>
         </ul>
     </div>   

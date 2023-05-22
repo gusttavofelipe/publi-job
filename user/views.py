@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from django.contrib.auth import login, logout, authenticate
+from django.views import View
 from . import models
 from . import forms
-from django.views import View
   
 
 class BaseRegister(View):
@@ -52,24 +55,72 @@ class UserRegister(BaseRegister):
         if not self.userform.is_valid() or not self.profileform.is_valid():
             return self.render
         
-        username = self.userform.cleaned_data.get('username')
         password = self.userform.cleaned_data.get('password')
-        email = self.userform.cleaned_data.get('email')
 
         # Usuário logado
-        if self.request.user.is_authenticated:
-            pass
+        if not self.request.user.is_authenticated:
 
-        # Usário não logado (novo)
-        else:
-            user = self.userform.save(commit=False)
-            user.set_password(password)
-            user.save()
+            userr = self.userform.save(commit=False)
+            userr.set_password(password)
+            userr.save()
 
             profile = self.profileform.save(commit=False)
-            profile.user = user
+            profile.userr = userr
             profile.save()
 
-        return self.render
-        
+        if password:
+            check = authenticate(
+                self.request,
+                user=userr,
+                password=password
+                )
+            if check:
+                login(self.request, user=userr)
 
+        messages.success(
+            self.request,
+            'Registered successfully'
+        )
+        
+        return redirect('vacancies:home') 
+        
+    
+class UserLogin(BaseRegister):
+    template_name = 'user/login.html'
+
+    def post(self, *args, **kwargs):
+        email = self.request.POST.get('email')
+        password = self.request.POST.get('password')
+
+        if not email or not password:
+            messages.error(
+                self.request,
+                'Usuário ou senha inválidos.'
+            )
+            return redirect('user:user_login')
+
+        usuario = authenticate(
+            self.request, email=email, password=password)
+
+        if not usuario:
+            messages.error(
+                self.request,
+                'Usuário ou senha inválidos.'
+            )
+            return redirect('user:user_login')
+
+        login(self.request, user=usuario)
+
+        messages.success(
+            self.request,
+            'Você fez login no sistema e pode concluir sua compra.'
+        )
+        return redirect('produto:carrinho')
+
+
+class UserLogout(BaseRegister):
+    template_name = 'user/login.html'
+
+    def post(self, *args, **kwargs):
+        logout(self.request)
+        return redirect('vacancies:home')
