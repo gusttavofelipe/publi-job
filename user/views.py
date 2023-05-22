@@ -16,7 +16,7 @@ class BaseRegister(View):
         self.profile = None
 
         if self.request.user.is_authenticated:  
-            self.profile = models.Profile.objects.filter(username=self.request.user)
+            self.profile = models.Profile.objects.filter(username_profile=self.request.user)
 
             self.context = {
                 'userform': forms.UserForm(
@@ -60,22 +60,22 @@ class UserRegister(BaseRegister):
         # Usuário logado
         if not self.request.user.is_authenticated:
 
-            userr = self.userform.save(commit=False)
-            userr.set_password(password)
-            userr.save()
+            user = self.userform.save(commit=False)
+            user.set_password(password)
+            user.save()
 
             profile = self.profileform.save(commit=False)
-            profile.userr = userr
+            profile.user = user
             profile.save()
 
         if password:
             check = authenticate(
                 self.request,
-                user=userr,
+                user=user,
                 password=password
                 )
             if check:
-                login(self.request, user=userr)
+                login(self.request, user=user)
 
         messages.success(
             self.request,
@@ -89,10 +89,10 @@ class UserLogin(BaseRegister):
     template_name = 'user/login.html'
 
     def post(self, *args, **kwargs):
-        email = self.request.POST.get('email')
+        username = self.request.POST.get('username')
         password = self.request.POST.get('password')
 
-        if not email or not password:
+        if not username or not password:
             messages.error(
                 self.request,
                 'Usuário ou senha inválidos.'
@@ -100,7 +100,7 @@ class UserLogin(BaseRegister):
             return redirect('user:user_login')
 
         usuario = authenticate(
-            self.request, email=email, password=password)
+            self.request, username=username, password=password)
 
         if not usuario:
             messages.error(
@@ -115,7 +115,7 @@ class UserLogin(BaseRegister):
             self.request,
             'Você fez login no sistema e pode concluir sua compra.'
         )
-        return redirect('produto:carrinho')
+        return redirect('vacancies:home')
 
 
 class UserLogout(BaseRegister):

@@ -1,10 +1,14 @@
 from django.db import models
 from choices.schooling_choices import SCHOOLING_CHOICES
 from choices.stt_choices import STATE_CHOICES
+from django.contrib.auth.models import User
+
 
 
 class Profile(models.Model):
-    username = models.CharField("Username", max_length=255)
+    username_profile = models.OneToOneField(
+        User, on_delete=models.CASCADE, verbose_name='Username'
+        )    
     whatsapp = models.IntegerField("WhatsApp")
     phone_number= models.IntegerField("Phone number")
     occupation = models.CharField("Occupation", max_length=255)
@@ -30,5 +34,5 @@ class Profile(models.Model):
         )
 
     def  __str__(self) -> str:
-        return self.address
+        return f'{self.username_profile}'
     

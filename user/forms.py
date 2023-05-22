@@ -7,7 +7,7 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = models.Profile
         fields = '__all__'
-        exclude = ('username', )
+        exclude = ('username_profile', )
 
 class UserForm(forms.ModelForm):
     password = forms.CharField(
@@ -29,7 +29,7 @@ class UserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name',
-                 'username', 'email', 'password', 'password2'
+                'username', 'email', 'password', 'password2'
                 )
         
     def clean(self, *args, **kwargs):
