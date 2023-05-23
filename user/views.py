@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.views import View
-from . import models
+from django.views.generic import ListView
 from . import forms
   
 
@@ -106,8 +106,14 @@ class UserLogin(BaseRegister):
 
 
 class UserLogout(BaseRegister):
-    # template_name = 'vacancies/index.html'
-
     def get(self, *args, **kwargs):
         logout(self.request)
         return redirect('vacancies:home')
+
+
+class UserProfile(ListView):
+    template_name = 'user/profile.html'
+
+
+class SendVacancy(View):
+    template_name = 'user/send.html'

@@ -32,18 +32,26 @@
         {% if request.user.is_authenticated %}
             <li class="nav-item">
                 <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" 
-                href="{% url 'user:user_login' %}">Autenticado</a>                  
+                href="{% url 'user:user_logout' %}">Log out</a>                  
             </li>
         {% else %}
             <li class="nav-item">
                 <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" 
-                href="{% url 'user:user_login' %}">não Autenticado</a>                  
+                href="{% url 'user:user_login' %}">Sing in</a>                  
             </li>
         {% endif %}
+
+        {% if request.user.is_authenticated %}
             <li class="nav-item hover-effect">
                 <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
-                 href="{% url 'user:user_register' %}">Send vacancy</a>
+                href="{% url 'user:send_vacancy' %}">Send vacancy</a>
             </li>
+        {% else %}
+            <li class="nav-item hover-effect">
+                <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
+                href="{% url 'user:user_register' %}">Send vacancy</a>
+            </li>
+        {% endif %}
         </ul>
     </div>   
 </nav>
