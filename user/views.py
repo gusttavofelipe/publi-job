@@ -6,9 +6,11 @@ from django.views import View
 from django.views.generic import ListView
 from . import forms
 from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm
 from django.views.generic.edit import UpdateView
 from .models import Profile
 from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordChangeView
 
 
 class BaseRegister(View):
@@ -134,6 +136,11 @@ class EditProfile(UpdateView):
     
     def get_object(self):
         return self.request.user
+
+class ChangePassword(PasswordChangeView):
+    template_name='user/change_password.html'
+    form_class = PasswordChangeForm
+    success_url = reverse_lazy('vacancies:home')
 
 
 class SendVacancy(View):
