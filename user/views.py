@@ -1,13 +1,15 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.views import View
 from django.views.generic import ListView
 from . import forms
-from .models import Profile
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.views.generic.edit import UpdateView
+from .models import Profile
+from django.urls import reverse_lazy
+
 
 class BaseRegister(View):
     template_name = 'user/register.html' 
@@ -122,41 +124,16 @@ class UserProfile(ListView):
     template_name = 'user/profile.html'
 
 
-class EditProfile(UserRegister, BaseRegister):
+class EditProfile(UpdateView):
     template_name = 'user/edit.html'
-    def post(self, *args, **kwargs):
-        if not self.userform.is_valid():
-            return self.render   
-         
-        email = self.userform.cleaned_data.get('email')
-        first_name = self.userform.cleaned_data.get('first_name')
-        last_name = self.userform.cleaned_data.get('last_name')
-        username = self.userform.cleaned_data.get('username')
-        password = self.userform.cleaned_data.get('password')
-        
-        if self.request.user.is_authenticated:
-            user = get_object_or_404(
-                User, username=self.request.user.username)
+    model = User
+    fields = ['first_name', 'last_name', 'email', 'username']
+    template_name_suffix = "_update_form"
+    success_url = reverse_lazy('vacancies:home')
 
-            user.username = username
-            if password:
-                user.set_password(password)
-
-            user.email = email
-            user.first_name = first_name
-            user.last_name = last_name
-            user.save()
-
-            if not self.profile:
-                self.profileform.cleaned_data['username_profile'] = user
-                # print(self.profileform.cleaned_data)
-                profile = Profile(**self.profileform.cleaned_data)
-                profile.save()
-            else:
-                profile = self.profileform.save(commit=False)
-                profile.user = user
-                profile.save()
-        return redirect('vacancies:home') 
+    
+    def get_object(self):
+        return self.request.user
 
 
 class SendVacancy(View):
