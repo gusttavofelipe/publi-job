@@ -44,7 +44,7 @@
         {% if request.user.is_authenticated %}
             <li class="nav-item hover-effect">
                 <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
-                href="{% url 'user:send_vacancy' %}">Send vacancy</a>
+                href="{% url 'user:user_profile' %}">Send vacancy</a>
             </li>
         {% else %}
             <li class="nav-item hover-effect">

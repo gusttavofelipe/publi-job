@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-5 align-center">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'img/card.svg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-7">
+            <h2>Profession</h2>
+            <div class="card shadow">
+                  <blockquote class="blockquote mb-0 text-left">
+                    {{ user.profile.occupation }}
+                  </blockquote>
+              </div>
+            
+            <h2>Schooling</h2>
+            <div class="card shadow">
+                <blockquote class="blockquote mb-0 text-left">
+                    {{ user.profile.schooling }}
+                </blockquote>
+            </div>
+
+            <h2>Address</h2>
+            <div class="card shadow">
+                <blockquote class="blockquote mb-0 text-left">
+                    {{ user.profile.address }}</br>
+                    <strong>CEP:</strong> {{ user.profile.zip_code }},
+                    <strong>Neighborhood:</strong> {{ user.profile.neighborhood }},
+                    <strong>City:</strong> {{ user.profile.city }}, <strong>Sate:</strong> {{ user.profile.state }}, 
+                </blockquote>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+{% endblock content %}  

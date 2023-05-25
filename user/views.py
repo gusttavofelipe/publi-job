@@ -1,11 +1,13 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
 from django.views import View
 from django.views.generic import ListView
 from . import forms
-  
+from .models import Profile
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 class BaseRegister(View):
     template_name = 'user/register.html' 
@@ -16,7 +18,9 @@ class BaseRegister(View):
         self.profile = None
 
         if self.request.user.is_authenticated:  
-
+            self.profile = Profile.objects.filter(
+                username_profile=self.request.user
+            ).last()
             self.context = {
                 'userform': forms.UserForm(
                     data=self.request.POST or None,
@@ -25,6 +29,7 @@ class BaseRegister(View):
                 ),
                 'profileform': forms.ProfileForm(
                     data=self.request.POST or None,
+                    instance=self.profile,
                 )
             }
 
@@ -112,7 +117,46 @@ class UserLogout(BaseRegister):
 
 
 class UserProfile(ListView):
+    model = Profile
+    context_object_name = 'profile'
     template_name = 'user/profile.html'
+
+
+class EditProfile(UserRegister, BaseRegister):
+    template_name = 'user/edit.html'
+    def post(self, *args, **kwargs):
+        if not self.userform.is_valid():
+            return self.render   
+         
+        email = self.userform.cleaned_data.get('email')
+        first_name = self.userform.cleaned_data.get('first_name')
+        last_name = self.userform.cleaned_data.get('last_name')
+        username = self.userform.cleaned_data.get('username')
+        password = self.userform.cleaned_data.get('password')
+        
+        if self.request.user.is_authenticated:
+            user = get_object_or_404(
+                User, username=self.request.user.username)
+
+            user.username = username
+            if password:
+                user.set_password(password)
+
+            user.email = email
+            user.first_name = first_name
+            user.last_name = last_name
+            user.save()
+
+            if not self.profile:
+                self.profileform.cleaned_data['username_profile'] = user
+                # print(self.profileform.cleaned_data)
+                profile = Profile(**self.profileform.cleaned_data)
+                profile.save()
+            else:
+                profile = self.profileform.save(commit=False)
+                profile.user = user
+                profile.save()
+        return redirect('vacancies:home') 
 
 
 class SendVacancy(View):
