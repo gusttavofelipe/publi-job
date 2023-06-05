@@ -2,186 +2,194 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 
-.navbar, .anav, .nav-link{
+.navbar,
+.anav,
+.nav-link {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 20px!important;
+    font-size: 20px !important;
 }
 
-p{
+p {
     font-size: large;
 }
 
-.img-fluid{ 
-    max-width: 100%!important;
-    height: auto!important;
+.img-fluid {
+    max-width: 100% !important;
+    height: auto !important;
 }
 
-.form-font{
-    font-family: 'Source Sans Pro', sans-serif!important;
-    font-size: 18px!important;
+.form-font {
+    font-family: 'Source Sans Pro', sans-serif !important;
+    font-size: 18px !important;
 }
 
-#occopation{
-    background-color: rgb(78,167,81);
+#occopation {
+    background-color: rgb(78, 167, 81);
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 0.9em;
 }
 
-#vacancy-descri{
+#vacancy-descri {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 18px;
     font-weight: 600;
 }
 
 .rounded {
-    border-radius: 0.40rem!important;
+    border-radius: 0.40rem !important;
 }
 
 .shadow {
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.1)!important;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
 }
 
-#date-sm{
+#date-sm {
     font-family: 'Roboto Condensed', sans-serif;
     color: #05943f;
     font-size: 13.5px;
 }
 
-#job-sm{
+#job-sm {
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 17px;
 }
 
-.link-descri{
+.link-descri {
     color: black;
-    text-decoration: none!important;
+    text-decoration: none !important;
 }
 
 .bg-banner {
-    background: rgb(54,201,91);
+    background: rgb(54, 201, 91);
     background: radial-gradient(circle,
-     rgba(54,201,91,0.9640231092436975)
-     0%, rgba(26,59,35,0.9136029411764706) 100%);
+            rgba(54, 201, 91, 0.9640231092436975) 0%, rgba(26, 59, 35, 0.9136029411764706) 100%);
 }
 
-.flex{
+.flex {
     display: flex;
     align-items: center;
 }
 
-.mt{
-    margin-top:80px!important;
+.mt {
+    margin-top: 80px !important;
 }
 
-.banner-title{
+.banner-title {
     font-family: 'Roboto Condensed', sans-serif;
     padding-left: 20px;
 }
 
-.main-text{
+.main-text {
     font-weight: bold;
 }
 
-.btn-success{
-    background: rgb(35,167,43);
-    background: linear-gradient(0deg, rgba(35,167,43,1) 0%, rgba(56,176,64,1) 100%);
+.btn-success {
+    background: rgb(35, 167, 43);
+    background: linear-gradient(0deg, rgba(35, 167, 43, 1) 0%, rgba(56, 176, 64, 1) 100%);
 }
 
 .text-success {
-    color: rgb(22, 138, 30)!important;
+    color: rgb(22, 138, 30) !important;
 }
 
 .title-link:hover {
     text-decoration: none;
 }
 
-.input-group{
-    width: 100%!important;
+.input-group {
+    width: 100% !important;
 }
 
-.top-bar{
+.top-bar,
+.profile {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-.text-top{
+.text-top {
     color: rgb(176, 176, 176);
     font-size: 15px;
 }
 
-.vertical-center{
+.vertical-center {
     vertical-align: middle;
 }
 
-.text-top:hover{
+.text-top:hover {
     color: rgb(145, 145, 145);
+}
+
+.card-size {
+    height: 440px!important;
 }
 
 /* .register-title{
     padding: ;
 } */
 
-fieldset{
+fieldset {
     font-family: 'Roboto Condensed', sans-serif;
     padding: 35px;
-    margin-bottom: 35px!important;
+    margin-bottom: 35px !important;
 }
 
-.container-form{
+.container-form {
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 19px!important;
+    font-size: 19px !important;
 }
 
 @media only screen and (max-width: 767px) {
-    .img-fluid{
-        max-width: 100%!important;
-        height: auto!important;
+    .img-fluid {
+        max-width: 100% !important;
+        height: auto !important;
         padding-right: auto;
     }
-    .banner-title{
-        display: none!important;
+
+    .banner-title {
+        display: none !important;
     }
-    .mt{
-        margin-top: 50px!important;
+
+    .mt {
+        margin-top: 50px !important;
     }
 
 }
 
 @media only screen and (min-width: 768px) {
-    .img-fluid{
-        max-width: 100%!important;
-        height: auto!important;
+    .img-fluid {
+        max-width: 100% !important;
+        height: auto !important;
         padding-left: 2%;
         padding-right: auto;
     }
 
-    .container-form{
+    .container-form {
         padding: 48px;
     }
 
 }
 
 @media only screen and (min-width: 1190px) {
-    .img-fluid{
-        max-width: 100%!important;
-        height: auto!important;
+    .img-fluid {
+        max-width: 100% !important;
+        height: auto !important;
         padding-left: 8%;
         padding-right: auto;
     }
-    
-    .email-contact{
-        font-size: 14px!important;
+
+    .email-contact {
+        font-size: 14px !important;
     }
 }
 
 @media only screen and (min-width: 1400px) {
-    .img-fluid{
-        max-width: 100%!important;
-        height: auto!important;
+    .img-fluid {
+        max-width: 100% !important;
+        height: auto !important;
         padding-left: 21%;
         padding-right: auto;
     }
-    
-    .email-contact{
-        font-size: 14px!important;
+
+    .email-contact {
+        font-size: 14px !important;
     }
 }

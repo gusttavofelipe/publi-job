@@ -2,45 +2,90 @@
 {% load static %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-5 align-center">
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="{% static 'img/card.svg' %}" alt="Card image cap">
-                <div class="card-body">
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col">
         </div>
-        
-        <div class="col-7">
-            <h2>Profession</h2>
-            <div class="card shadow">
-                  <blockquote class="blockquote mb-0 text-left">
-                    {{ user.profile.occupation }}
-                  </blockquote>
+      </div>
+  
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4 shadow-sm card-size p-3 mb-5 bg-white rounded">
+            <div class="card-body text-center">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h5 class="my-3">{{ user.profile.username_profile }}</h5>
+              <p class="text-muted mb-1">{{ user.profile.occupation }}</p>
+              <p class="text-muted mb-4">{{ user.profile.neighborhood }}, {{ user.profile.city }}, {{ user.profile.state }}</p>
+              <div class="d-flex justify-content-center mb-2">
+                
+                <a href="{% url 'user:edit_profile' %}" class="btn btn-success text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil mr-1" viewBox="0 0 16 16">
+                        <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                    </svg>
+                Edit data</a>
               </div>
-            
-            <h2>Schooling</h2>
-            <div class="card shadow">
-                <blockquote class="blockquote mb-0 text-left">
-                    {{ user.profile.schooling }}
-                </blockquote>
             </div>
-
-            <h2>Address</h2>
-            <div class="card shadow">
-                <blockquote class="blockquote mb-0 text-left">
-                    {{ user.profile.address }}</br>
-                    <strong>CEP:</strong> {{ user.profile.zip_code }},
-                    <strong>Neighborhood:</strong> {{ user.profile.neighborhood }},
-                    <strong>City:</strong> {{ user.profile.city }}, <strong>Sate:</strong> {{ user.profile.state }}, 
-                </blockquote>
-            </div>
+          </div>
+  
         </div>
+        <div class="col-lg-8 ">
+          <div class="card mb-4 card-size shadow-sm p-3 mb-5 bg-white rounded">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted">{{ user.first_name }} {{ user.last_name }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Email</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted">{{ user.email }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Phone</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted">{{ user.profile.phone_number }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Mobile</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted">{{ user.profile.whatsapp }}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Address</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted">
+                    <strong>Zip code</strong>: {{ user.profile.zip_code }} <br>
+                    {{ user.profile.address }}, {{ user.profile.neighborhood }}, 
+                    {{ user.profile.city }}, {{ user.profile.state }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-
-</div>
+  </section>
 
 {% endblock content %}  
