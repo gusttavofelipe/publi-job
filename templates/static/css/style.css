@@ -54,6 +54,11 @@ p {
     font-size: 17px;
 }
 
+.detail{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 120%;
+}
+
 .link-descri {
     color: black;
     text-decoration: none !important;
@@ -137,6 +142,28 @@ fieldset {
     font-size: 19px !important;
 }
 
+.mb-dtitle{
+    margin-bottom: 48px;
+}
+
+.card-header {
+    background-color: white!important;
+}
+
+.detail-p {
+    font-size: 120%;
+    color: #05943f;
+
+}
+
+.p-dcontainer{
+    padding: 5%;
+}
+
+.p-dcollapse{
+    padding: 5%;
+}
+
 @media only screen and (max-width: 767px) {
     .img-fluid {
         max-width: 100% !important;
@@ -152,6 +179,20 @@ fieldset {
         margin-top: 50px !important;
     }
 
+    .detail-p {
+        font-size: 100%;
+        color: #05943f;
+    
+    }
+
+    .detail{
+        font-family: 'Roboto Condensed', sans-serif;
+        font-size: 100%;
+    }
+
+    .p-dcollapse{
+        padding: 10%;
+    }
 }
 
 @media only screen and (min-width: 768px) {

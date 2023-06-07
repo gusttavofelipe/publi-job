@@ -11,6 +11,9 @@ from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 class Vacancy(models.Model):
     name = models.CharField('Name', max_length=255)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+    contact_number = models.PositiveBigIntegerField('Phone number')
+    contact_whatsapp = models.PositiveBigIntegerField('WhatsApp')
+    contact_email = models.EmailField('E-mail')
     occupation_area = models.CharField(
         'Occupation area',
         max_length=3,

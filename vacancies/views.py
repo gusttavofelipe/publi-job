@@ -1,7 +1,6 @@
 from vacancies.models import Vacancy
-
-from django.views import View
 from django.views.generic.list import ListView
+from django.shortcuts import render
 
 
 class VacancyHome(ListView):
@@ -10,7 +9,10 @@ class VacancyHome(ListView):
     context_object_name = 'vacancies'
 
 
-class VacancyDetail(View): pass
+def vacancy_detail_view(request, pk):
+    context ={}
+    context['vacancy'] = Vacancy.objects.get(id=pk)
+    return render(request, "vacancies/detail.html", context)
 
 
 class VacancySearch(VacancyHome): pass

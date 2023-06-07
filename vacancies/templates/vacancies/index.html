@@ -71,7 +71,7 @@
                         <small id="date-sm">
                             {{vacancy.date_posted|date:"M d, Y"}}
                         </small><br>
-                        <a href="" class="link-descri">
+                        <a href="{% url 'vacancies:vacancy_detail' vacancy.id %}" class="link-descri">
                             {{ vacancy.name }} |<br>
                             {{ vacancy.city }} - {{ vacancy.state }}
                             | {{ vacancy.number }} <br>

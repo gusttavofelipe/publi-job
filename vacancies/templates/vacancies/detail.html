@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid detail mt-5">
+    <div class="container shadow-lg p-dcontainer mb-5 bg-white rounded">
+
+        <h2 class="mb-dtitle text-success pt-4 pl-3">
+            Vacancy - <strong>{{ vacancy.name|upper }}</strong> {{ vacancy.city }} - {{ vacancy.state }} | {{ vacancy.number }} Vaga(s)
+        </h2>
+        <div class="mb-5 pl-3">
+          <span>
+            <a href="" class="btn btn-success">Emprego | {{ vacancy.get_occupation_area_display }}</a> 
+            <a href="" class="text-dark pl-dlocation">{{ vacancy.city }} - {{ vacancy.state }}</a>
+          </span>
+        </div>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <p class="detail-p">Location</p>
+                    {{ vacancy.city }}, 
+                    {{ vacancy.state }}
+                </li>
+                <li class="list-group-item">
+                    <p class="detail-p">Vacancy</p>
+                    {{ vacancy.name }} -
+                    {{ vacancy.number }} Vagas(s)
+                </li>
+                <li class="list-group-item">
+                    <p class="detail-p">Salary</p>
+                    {{ vacancy.salary }}
+                </li>
+              </ul>
+              <div class="accordion mt-3" id="accordionExample">
+                <div class="card pt-2">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <button class="btn btn-light" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        ABOUT YHE COMPANAY
+                      </button>
+                    </h5>
+                  </div>
+              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div class="card-body p-dcollapse">
+                    {{ vacancy.about_company }}
+
+                    </div>
+                  </div>
+                </div>
+                <div class="card pt-2">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        REQUERIMENTS
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                    <div class="card-body p-dcollapse">
+                    {{ vacancy.requirements }}
+
+                    </div>
+                  </div>
+                </div>
+                <div class="card pt-2">
+                  <div class="card-header" bg-light id="headingThree">
+                    <h5 class="mb-0">
+                      <button class="btn btn-light collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        ACTIVITIES
+                      </button>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                    <div class="card-body p-dcollapse">
+                        {{ vacancy.activities }}
+                    </div>
+                  </div>
+                  <li class="list-group-item mt-3 p-5 align-center">
+                    <p class="detail-p text-center"><strong>Curriculum</strong></p>
+                    Interessados(as) e que atendam o perfil solicitado acima, devem enviar seus curriculos para o e-mail
+                    <strong>{{ vacancy.contact_email }}</strong> contendo no titulo/assunto <strong>{{ vacancy.name }} - {{ vacancy.state }}</strong> ou
+                     atraves do telefone/WhatsApp <strong class="text-primary">{{ vacancy.contact_whatsapp }} / {{ vacancy.contact_number }} </strong>
+                </li>
+                </div>
+              </div>
+        </div>
+
+{% endblock content %}
