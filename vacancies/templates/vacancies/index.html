@@ -23,20 +23,6 @@
                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categories
                 </button>
 
-                <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>State</option>
-                    {% for state in vacancies %}
-                        <option>{{ state.get_state_display }}</option>      
-                    {% endfor %}
-                  </select>
-
-                  <select class="custom-select" id="inputGroupSelect01">
-                    <option selected>Occupation</option>
-                    {% for occopation in vacancies %}
-                        <option>{{ occopation.get_occupation_area_display }}</option>      
-                    {% endfor %}
-                  </select>
-
                 <div class="dropdown-menu">
                     {% for category in categories %}
                     <a href="{% url 'vacancies:vacancy_category' category.name %}" class="dropdown-item">
@@ -44,14 +30,31 @@
                         {% endfor %}
                 </div>
             </div>
-            <input type="text" class="form-control" placeholder="Profession, Job Role, etc...">
-            <button type="button" class="btn btn-dark">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                 viewBox="0 0 16 16">
+            <form action="{% url 'vacancies:vacancy_search' %}" method="get">
+                <input type="search" name="search" class="form-control" placeholder="Profession, Job Role, etc...">
+                <select name="occupation" class="custom-select" id="inputGroupSelect01" >
+                    <option selected disabled>Occupation</option>
+                    {% for occupation in vacancies %}
+                        <option>{{ occupation.get_occupation_area_display }}</option>      
+                    {% endfor %}
+                  </select>
+
+                  <select class="custom-select" id="inputGroupSelect02" name="state">
+                    <option selected disabled>State</option>
+                    {% for state in vacancies %}
+                        <option>{{ state.get_state_display }}</option>      
+                    {% endfor %}
+                  </select>
+
+                <button type="submit" value="{{ request.GET.search }}" class="btn btn-dark"> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 
                     1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </button>
+                    </svg>
+                </button>
+
+            </form>
         </div>
         <hr>
         <div class="row">

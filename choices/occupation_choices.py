@@ -6,3 +6,6 @@ OCCUPATION_AREA_CHOICES = (
     ('EDC', 'Education'),
     ('SEC', 'Security'),
 )
+
+# for k, v in OCCUPATION_AREA_CHOICES:
+#     print(v)
