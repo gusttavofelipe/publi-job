@@ -4,14 +4,15 @@
 
 
 {% block content %}  
-  
-<div class="container">
-    <form action="" method="post">
-        {%csrf_token%}
-        {{ userform|crispy }}
-        {{ profileform|crispy }}
-        <input type="submit" value="Submit">
+<div class="container container-form">
+    <form class="p-5 mt-0 mb-5 shadow border rounded register-form" action="" method="post">
+        <fieldset class="form-group border rounded">
+            <legend class="p-0 m-0 font-weight-bold text-success register-legend">User Registration</legend>
+            <legend class="mb-4 p-0 font-weight-bold">Fill in your details correctly</legend>
+            {%csrf_token%}
+            {{ userform|crispy }}
+            {{ profileform|crispy }}
+        <input class="btn btn-success" type="submit" value="Submit">
     </form>
 </div>
-  
 {% endblock content %}  

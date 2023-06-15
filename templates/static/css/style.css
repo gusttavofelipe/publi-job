@@ -133,8 +133,12 @@ p {
 
 fieldset {
     font-family: 'Roboto Condensed', sans-serif;
-    padding: 35px;
+    padding: 48px;
     margin-bottom: 35px !important;
+}
+
+.register-legend{
+    font-size: 200%;
 }
 
 .container-form {
@@ -221,7 +225,16 @@ fieldset {
     }
 
     .container-form {
-        padding: 7%;
+        margin-top: 5%;
+        padding: 1%;
+    }
+
+    fieldset {
+        padding: 16px!important;
+    }
+
+    .register-form{
+        padding: 16px!important;
     }
 }
 
@@ -242,7 +255,7 @@ fieldset {
     }
 
     .container-form {
-        width: 45%;
+        width: 55%!important;
     }
 }
 

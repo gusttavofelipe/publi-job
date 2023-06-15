@@ -143,5 +143,5 @@ class ChangePassword(PasswordChangeView):
     success_url = reverse_lazy('vacancies:home')
 
 
-class SendVacancy(View):
-    template_name = 'user/send.html'
+class SendVacancy(BaseRegister):
+    template_name = 'user/send_vacancy.html'

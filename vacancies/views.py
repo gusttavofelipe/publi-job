@@ -120,10 +120,3 @@ class VacancyCategory(VacancyHome):
         return qs
 
 
-class VacancyForm(VacancyHome):
-    template_name = 'vacancies/form.html'
-
-
-class VacancyLogin(VacancyHome):
-    template_name = 'vacancies/register.html'
-
