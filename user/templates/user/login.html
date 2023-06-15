@@ -1,18 +1,24 @@
 {% extends 'base.html' %}
 
-{% block content %}
-<form method="post" action="{% url 'user:user_login' %}">
-    {% csrf_token %} 
-    <div class="form-group">
-      <label for="InputUser1">Username</label>
-      <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp" placeholder="Enter email">
-      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-    </div>
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
-    </div>
-    <button type="submit" class="btn btn-primary ">Sing in</button>
-  </form>
 
+{% block content %}
+<div class="container container-form">
+  <form class="p-5 mt-0 mb-5 shadow border rounded register-form" method="post" action="{% url 'user:user_login' %}">
+    {% csrf_token %}
+    <fieldset class="form-group border rounded">
+      <legend class="p-0 m-0 font-weight-bold text-dark register-legend">Login</legend>
+      <div class="form-group">
+        <label for="InputUser1">Username</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp"
+          placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-success ">Sing in</button>
+  </form>
+  </fieldset>
+</div>
 {% endblock content %}
