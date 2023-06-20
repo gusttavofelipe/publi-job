@@ -2,8 +2,18 @@
 
 {% block content %}
 
+
 <div class="container-fluid detail mt-5">
-    <div class="container shadow-lg p-dcontainer mb-5 bg-white rounded">
+
+  <div class="container h5 pb-3">
+    <span class="">
+      <a class="text-success" href="{% url 'vacancies:home' %}">Home</a> /
+      <a class="text-success" href="#">Vacancies</a> /
+      <a class="text-success" href="{% url 'vacancies:vacancy_detail' vacancy.id %}">{{ vacancy.name }} | {{ vacancy.city }} - {{ vacancy.state }}</a>
+    </span>
+  </div>
+
+  <div class="container shadow-lg p-dcontainer mb-5 bg-white rounded">
 
         <h2 class="mb-dtitle text-success pt-4 pl-3">
             Vacancy - <strong>{{ vacancy.name|upper }}</strong> {{ vacancy.city }} - {{ vacancy.state }} | {{ vacancy.number }} Vaga(s)
