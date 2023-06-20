@@ -195,6 +195,19 @@ fieldset {
     font-size: 1px!important;
 }
 
+.dropdown-item{
+    color: white;
+}
+
+.dropdown-item:hover{
+    color: #344037;
+}
+
+.show{
+    background-color: #343A40;
+    border-radius: 3%;
+}
+
 @media only screen and (max-width: 767px) {
     .img-fluid {
         max-width: 100% !important;
