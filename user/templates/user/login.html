@@ -3,9 +3,9 @@
 
 {% block content %}
 <div class="container container-form">
-  <form class="p-5 mt-0 mb-5 shadow border rounded register-form" method="post" action="{% url 'user:user_login' %}">
+  <form class="p-5 mt-0 shadow border rounded register-form" method="post" action="{% url 'user:user_login' %}">
     {% csrf_token %}
-    <fieldset class="form-group border rounded">
+    <fieldset class="form-group rounded">
       <legend class="p-0 m-0 font-weight-bold text-dark register-legend">Login</legend>
       <div class="form-group">
         <label for="InputUser1">Username</label>

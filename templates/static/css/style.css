@@ -162,8 +162,14 @@ fieldset {
 }
 
 .p-dcontainer{
-    padding: 5%;
+    padding: 3%;
+    max-width: 50%;
 }
+
+.p-dspancontainer{
+    max-width: 50%;
+}
+
 
 .p-dcollapse{
     padding: 5%;
@@ -240,6 +246,15 @@ fieldset {
     .navbar-expand-lg{
         padding: 3px!important;
     }
+
+    .p-dcontainer{
+        padding: 5%;
+        max-width: 100%;
+    }
+
+    .p-dspancontainer{
+        max-width: 100%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -261,6 +276,15 @@ fieldset {
     .container-form {
         width: 75%!important;
     }
+
+    .p-dcontainer{
+        padding: 5%;
+        max-width: 70%;
+    }
+
+    .p-dspancontainer{
+        max-width: 70%;
+    }
 }
 
 @media only screen and (min-width: 1190px) {
@@ -277,6 +301,15 @@ fieldset {
 
     .container-form {
         width: 55%!important;
+    }
+
+    .p-dcontainer{
+        padding: 5%;
+        max-width: 50%;
+    }
+
+    .p-dspancontainer{
+        max-width: 50%;
     }
 }
 
