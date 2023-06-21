@@ -196,15 +196,15 @@ fieldset {
 }
 
 .dropdown-item{
-    color: white;
-}
-
-.dropdown-item:hover{
     color: #344037;
 }
 
+.dropdown-item:hover{
+    background-color: #344037;
+    color: white!important;
+}
+
 .show{
-    background-color: #343A40;
     border-radius: 3%;
 }
 
