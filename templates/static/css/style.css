@@ -208,6 +208,10 @@ fieldset {
     border-radius: 3%;
 }
 
+footer{
+    margin-top: 7.5%;
+}
+
 @media only screen and (max-width: 767px) {
     .img-fluid {
         max-width: 100% !important;
@@ -267,6 +271,10 @@ fieldset {
 
     .p-dspancontainer{
         max-width: 100%;
+    }
+
+    footer{
+        margin-top: 25%;
     }
 }
 
