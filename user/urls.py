@@ -12,5 +12,4 @@ urlpatterns = [
     path('user/view_profile/', views.UserProfile.as_view(), name='user_profile'),
     path('user/change_data/', views.EditProfile.as_view(), name='edit_profile'),
     path('user/change_password/', views.ChangePassword.as_view(), name='change_password'),
-    path('user/send_vacancy/', views.SendVacancy.as_view(), name='send_vacancy'),
 ]

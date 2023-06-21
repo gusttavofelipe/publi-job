@@ -1,6 +1,7 @@
 from vacancies.models import Vacancy
+from .forms import VacancyForm
 from django.views.generic.list import ListView
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.db.models import Q, Case, When
 from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 from choices.stt_choices import STATE_CHOICES
@@ -120,3 +121,13 @@ class VacancyCategory(VacancyHome):
         return qs
 
 
+def send_vacancy(request):
+    if request.method == 'POST':
+        form = VacancyForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+            return redirect('vacancies:home')
+    else:
+        form = VacancyForm()
+        return render(request, 'vacancies/send_vacancy.html', {'form': form})
