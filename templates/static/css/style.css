@@ -166,10 +166,14 @@ fieldset {
     max-width: 50%;
 }
 
+.send-spancontainer{
+    font-family: 'Roboto Condensed', sans-serif;
+    max-width: 70%;
+}
+
 .p-dspancontainer{
     max-width: 50%;
 }
-
 
 .p-dcollapse{
     padding: 5%;
@@ -276,6 +280,14 @@ footer{
     footer{
         margin-top: 25%;
     }
+
+    .container-form{
+        max-width: 100%;
+    }
+
+    .send-spancontainer{
+        max-width: 100%;
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -287,15 +299,17 @@ footer{
     }
 
     .container-form {
+        max-width: 70%;
         padding: 2.5%;
+    }
+
+    .send-spancontainer{
+        max-width: 70%;
+
     }
 
     .occupation_select{
         width: 100%;
-    }
-
-    .container-form {
-        width: 75%!important;
     }
 
     .p-dcontainer{
@@ -321,7 +335,11 @@ footer{
     }
 
     .container-form {
-        width: 55%!important;
+        max-width: 55%!important;
+    }
+
+    .send-spancontainer{
+        max-width: 55%;
     }
 
     .p-dcontainer{

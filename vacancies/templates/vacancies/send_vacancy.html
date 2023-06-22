@@ -1,11 +1,34 @@
 {% extends 'base.html' %}
+{% load widget_tweaks %}
+
 
 {% block content %}
+<div class="container-fluid mb-5 mt-3">
 
-<form action="{% url 'vacancies:send_vacancy' %}" method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Submit">
-</form>
+  <div class="container send-spancontainer h5 pb-3">
+    <span class="path-link">
+      <a class="text-success" href="{% url 'vacancies:home' %}">Home</a> /
+      <a class="text-success" href="{% url 'vacancies:send_vacancy' %}">Send vacancy</a>
+    </span>
+  </div>
 
+  <div class="container container-form shadow-lg mb-5 bg-white rounded mt-0">
+    <h1 class="p-2 pb-4 text-success font-weight-bold">Send your Vacancy</h1>
+    <form method="post" action="" class="p-1">
+      {% csrf_token %}
+      {% for field in form.visible_fields %}
+      <div class="form-group pl-2 pr-1">
+        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|add_class:'form-control form-font' }}
+        {% for error in field.errors %}
+        <span class="help-block">{{ error }}</span>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+      <input class="btn btn-success change-btn-mobile change-btn mt-1 ml-2" type="submit" value="Send">
+    </form>
+
+  </div>
+</div>
 {% endblock %}
