@@ -14,7 +14,6 @@ p {
 }
 
 .img-fluid {
-    max-width: 100% !important;
     height: auto !important;
 }
 
@@ -85,7 +84,6 @@ p {
 
 .banner-title {
     font-family: 'Roboto Condensed', sans-serif;
-    padding-left: 20px;
 }
 
 .main-text {
@@ -218,13 +216,12 @@ footer{
 
 @media only screen and (max-width: 767px) {
     .img-fluid {
-        max-width: 100% !important;
-        height: auto !important;
-        padding-right: auto;
+        margin: auto;
+        padding: 0% 4% 0% 4%;
     }
 
     .banner-title {
-        display: none !important;
+        display: none;
     }
 
     .mt {
@@ -292,10 +289,11 @@ footer{
 
 @media only screen and (min-width: 768px) {
     .img-fluid {
-        max-width: 100% !important;
-        height: auto !important;
-        padding-left: 2%;
-        padding-right: auto;
+        margin: 0% 0% 0% auto;
+    }
+    
+    .banner-title {
+        margin: 0% auto 0% 0%;
     }
 
     .container-form {
@@ -324,10 +322,11 @@ footer{
 
 @media only screen and (min-width: 1190px) {
     .img-fluid {
-        max-width: 100% !important;
-        height: auto !important;
-        padding-left: 8%;
-        padding-right: auto;
+        margin: 0% 0% 0% auto;
+    }
+    
+    .banner-title {
+        margin: 0% auto 0% 0%;
     }
 
     .email-contact {
@@ -354,13 +353,14 @@ footer{
 
 @media only screen and (min-width: 1400px) {
     .img-fluid {
-        max-width: 100% !important;
-        height: auto !important;
-        padding-left: 21%;
-        padding-right: auto;
+        margin: 0% 0% 0% auto;
+    }
+}
+
+    .banner-title {
+        margin: 0% auto 0% 0%;
     }
 
     .email-contact {
         font-size: 14px !important;
-    }
 }
