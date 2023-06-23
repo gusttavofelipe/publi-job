@@ -70,8 +70,8 @@
         <div class="row">
             {% for vacancy in vacancies %}
             <div class="col-sm-3">
-                <div class="shadow p-3 mb-5 rounded border-bottom-0">
-                    <p id="vacancy-descri">
+                <div class="vacancy-card shadow-card p-3 mb-5 rounded border-bottom-0">
+                    <p class="p-2 vacancy-descri">
                         <small>
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-calendar3" viewBox="0 0 16 16">
@@ -91,11 +91,11 @@
                             vaga(s)
                         </a>
 
-                    <p><a href="#" class=" link-descri p-1  border rounded text-white pl-2 pr-2" id="occopation">
+                    <p><a href="#" class=" link-descri p-1 border rounded text-white pl-2 pr-2" id="occopation">
                             {{ vacancy.get_occupation_area_display }}</a>
                     </p>
 
-                    <p class="p-1">
+                    <p class="vacancy-locate mb-0">
                         <small id="job-sm">Emprego em
                             <a href="">{{ vacancy.city }}</a> /
                             <a href="">{{ vacancy.state }}
