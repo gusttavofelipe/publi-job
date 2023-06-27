@@ -8,7 +8,7 @@
   <div class="container p-dspancontainer h5 pb-3">
     <span class="">
       <a class="text-success" href="{% url 'vacancies:home' %}">Home</a> /
-      <a class="text-success" href="#">Vacancies</a> /
+      <a class="text-success" href="{% url 'vacancies:home' %}">Vacancies</a> /
       <a class="text-success" href="{% url 'vacancies:vacancy_detail' vacancy.id %}">{{ vacancy.name }} | {{ vacancy.city }} - {{ vacancy.state }}</a>
     </span>
   </div>

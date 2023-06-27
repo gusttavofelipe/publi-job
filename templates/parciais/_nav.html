@@ -13,7 +13,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto topnav">
             <li class="nav-item ">
-                <a class="nav-link text-success" href="#">Vacancies</a>
+                <a class="nav-link text-success" href="{% url 'vacancies:home'%}">Vacancies</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">News</a>
@@ -58,11 +58,10 @@
         {% else %}
             <li class="nav-item hover-effect">
                 <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
-                href="{% url 'user:user_register' %}">Send vacancy</a>
+                href="{% url 'user:user_register' %}?next={ url 'vacancies:send_vacancy'}">Send vacancy</a>
             </li>
         {% endif %}
         </ul>
     </div>   
 </nav>
-
 
