@@ -21,12 +21,11 @@
             <h2 class="banner-title text-center">Search for vacancies here</h2>
         </div>
     </div>
-
     <div class="container">
-        <div class="input-group mb-3 mt">
+        <div class="input-group input-group-mobile">
             <form class="form-filter" action="{% url 'vacancies:vacancy_search' %}" method="get">
-                <div class="input-group-prepend category_display">
-                    <button type="button" class="btn btn-outline-dark dropdown-toggle dropdown-toggle-split "
+                <div class="input-group-prepend">
+                    <button type="button" class="btn btn-category-filter btn-outline-dark dropdown-toggle dropdown-toggle-split category_display"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categories
                     </button>
     
@@ -40,33 +39,34 @@
                         {% endfor %}
                     </div>
                 </div>
-                <select name="occupation" class="custom-select occupation_select" id="inputGroupSelect01" >
-                    <option selected disabled>Occupation</option>
-                    {% for occupation in vacancies %}
-                        <option>{{ occupation.get_occupation_area_display }}</option>      
-                        {% endfor %}
-                </select>
+                    <select name="occupation" class="custom-select" id="inputGroupSelect01" >
+                        <option selected disabled>Occupation</option>
+                        {% for occupation in vacancies %}
+                            <option>{{ occupation.get_occupation_area_display }}</option>
+                            {% endfor %}
+                    </select>
                     
-                <select class="custom-select occupation_select" id="inputGroupSelect02" name="state">
-                    <option selected disabled>State</option>
-                    {% for state in vacancies %}
-                    <option>{{ state.get_state_display }}</option>      
-                    {% endfor %}
-                </select>
+                    <select class="custom-select" id="inputGroupSelect02" name="state">
+                        <option selected disabled>State</option>
+                        {% for state in vacancies %}
+                        <option>{{ state.get_state_display }}</option>
+                        {% endfor %}
+                    </select>
                 
                 <input type="search" name="search" class="form-control input-form" placeholder="Profession, Job Role, etc...">
                     
                 <button type="submit" value="{{ request.GET.search }}" class="btn btn-dark"> 
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-                        viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 
-                        1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    <span class="mr-1 submit-filter">Filter</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 
+                    1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                 </button>
 
             </form>
         </div>
-        <hr>
+        <br>
         <div class="row">
             {% for vacancy in vacancies %}
             <div class="col-sm-3">
