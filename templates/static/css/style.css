@@ -130,10 +130,6 @@ p {
     color: rgb(145, 145, 145);
 }
 
-.card-size {
-    height: 440px!important;
-}
-
 fieldset {
     font-family: 'Roboto Condensed', sans-serif;
     padding: 48px;
@@ -231,6 +227,10 @@ footer{
 
 .shadow-card{
     box-shadow: 1px 1px 10px rgb(226, 224, 224);
+}
+.section-profile{
+    background-color: #eee;
+    height: 150%!important;
 }
 
 @media only screen and (max-width: 767px) {
