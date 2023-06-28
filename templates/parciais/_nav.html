@@ -29,38 +29,38 @@
                 <a class="nav-link" href="#">About</a>
             </li>
 
-        {% if request.user.is_authenticated %}
-            <li class="nav-item">
-                <div class="dropdown">
-                    <a class=" nav-link btn btn-light border border-dark border border-dark text-dark anav pl-5 pr-5 pt-2 pb-2 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    {{ user.username }}
-                    </a>
-                
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="nav-link bg-light" href="{% url 'user:user_profile' %}">View profile</a>
-                    <a class="nav-link bg-light" href="{% url 'user:change_password' %}">Change password</a>
-                    <a class="nav-link bg-light" href="{% url 'user:user_logout' %}">Logout</a>
+        <div class="buttons mobile-shadow-lg rounded p-1">
+            {% if request.user.is_authenticated %}
+                <li class="nav-item user-drop">
+                    <div class="dropdown mobile-shadow-md">
+                        <a class=" nav-link btn btn-light user-button border-secondary rounded text-dark pl-5 pr-5 pt-2 pb-2 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ user.username }}
+                        </a>
+                        <div class="dropdown-menu p-1" aria-labelledby="dropdownMenuLink">
+                            <a class="nav-link bg-light" href="{% url 'user:user_profile' %}">View profile</a>
+                            <a class="nav-link bg-light" href="{% url 'user:change_password' %}">Change password</a>
+                            <a class="nav-link bg-light" href="{% url 'user:user_logout' %}">Logout</a>
+                        </div>
                     </div>
-                </div>
-            </li>
-        {% else %}
-            <li class="nav-item">
-                <a class="nav-link btn btn-light border border-dark text-dark anav pl-5 pr-5" type="button" 
-                href="{% url 'user:user_login' %}">Sing in</a>                  
-            </li>
-        {% endif %}
-
-        {% if request.user.is_authenticated %}
-            <li class="nav-item hover-effect">
-                <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
-                href="{% url 'vacancies:send_vacancy' %}">Send vacancy</a>
-            </li>
-        {% else %}
-            <li class="nav-item hover-effect">
-                <a class="nav-link btn btn-success text-white anav pl-5 pr-5" type="button"
-                href="{% url 'user:user_register' %}?next={ url 'vacancies:send_vacancy'}">Send vacancy</a>
-            </li>
-        {% endif %}
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link btn btn-light user-button border border-dark text-dark  pl-5 pr-5" type="button"
+                    href="{% url 'user:user_login' %}">Sing in</a>
+                </li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <li class="nav-item hover-effect navitem-size">
+                    <a class="nav-link btn btn-success text-white send-button" type="button"
+                    href="{% url 'vacancies:send_vacancy' %}">Send vacancy</a>
+                </li>
+            {% else %}
+                <li class="nav-item hover-effect navitem-size">
+                    <a class="nav-link btn btn-success text-white send-button" type="button"
+                    href="{% url 'user:user_register' %}?next={ url 'vacancies:send_vacancy'}">Send vacancy</a>
+                </li>
+            {% endif %}
+        </div>
         </ul>
     </div>   
 </nav>
