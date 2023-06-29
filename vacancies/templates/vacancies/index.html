@@ -69,7 +69,7 @@
         <br>
         <div class="row">
             {% for vacancy in vacancies %}
-            <div class="col-sm-3">
+            <div class="col-sm">
                 <div class="vacancy-card shadow-card p-3 mb-5 rounded border-bottom-0">
                     <p class="p-2 vacancy-descri">
                         <small>
@@ -84,17 +84,15 @@
                         <small id="date-sm">
                             {{vacancy.date_posted|date:"M d, Y"}}
                         </small><br>
-                        <a href="{% url 'vacancies:vacancy_detail' vacancy.id %}" class="link-descri">
-                            {{ vacancy.name }} |<br>
-                            {{ vacancy.city }} - {{ vacancy.state }}
-                            | {{ vacancy.number }} <br>
-                            vaga(s)
-                        </a>
-
-                    <p><a href="#" class=" link-descri p-1 border rounded text-white pl-2 pr-2" id="occopation">
+                        <h4 class="h4">
+                            <a href="{% url 'vacancies:vacancy_detail' vacancy.id %}" class="font-weight-bold link-descri">
+                                {{ vacancy.name }} | {{ vacancy.city }} - {{ vacancy.state }} | {{ vacancy.number }} vaga(s)
+                            </a>
+                        </h4>
+                    <p class="pt-3">
+                        <a href="#" class=" link-descri p-1 border rounded text-white pl-2 pr-2 pt-1" id="occopation">
                             {{ vacancy.get_occupation_area_display }}</a>
                     </p>
-
                     <p class="vacancy-locate mb-0">
                         <small id="job-sm">Emprego em
                             <a href="">{{ vacancy.city }}</a> /
@@ -102,7 +100,6 @@
                         </small></a>
                     </p>
                     </p>
-
                     {% if vacancy.img %}
                     <p><img src="{{ vacancy.img.url }}" alt=""></p>
                     {% endif %}
