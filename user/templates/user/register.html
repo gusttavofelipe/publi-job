@@ -3,7 +3,13 @@
 
 
 {% block content %}  
-<div class="container container-form">
+<div class="container container-form pt-3">
+    <div class="container register-profile-path h5 pb-3">
+        <span class="">
+          <a class="text-success" href="{% url 'vacancies:home' %}">Home</a> /
+          <a class="text-success" href="{% url  'user:user_register'%}">Register</a>
+        </span>
+      </div>
     <form class="p-5 mt-0 shadow border rounded register-form" action="" method="post">
         <fieldset class="form-group border rounded">
             <legend class="p-0 m-0 font-weight-bold text-success register-legend">User Registration</legend>

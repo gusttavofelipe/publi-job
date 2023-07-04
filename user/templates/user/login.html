@@ -3,19 +3,24 @@
 
 {% block content %}
 <div class="container container-form">
+  <div class="container login-one-path h5 pb-3">
+    <span class="">
+      <a class="text-success" href="{% url 'vacancies:home' %}">Home</a> /
+      <a class="text-success" href="{% url  'user:user_login'%}">Login</a>
+    </span>
+  </div>
   <form class="p-5 mt-0 shadow border rounded register-form" method="post" action="{% url 'user:user_login' %}">
     {% csrf_token %}
     <fieldset class="form-group rounded">
       <legend class="p-0 m-0 font-weight-bold text-dark register-legend">Login</legend>
       <div class="form-group">
         <label for="InputUser1">Username</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp"
-          placeholder="Enter email">
+        <input type="text" class="form-control" id="exampleInputEmail1" name="username" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
       </div>
       <button type="submit" class="btn btn-success ">Sing in</button>
   </form>

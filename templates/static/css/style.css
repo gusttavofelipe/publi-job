@@ -87,7 +87,7 @@ p {
     margin-top: 80px !important;
 }
 
-.banner-title {
+.banner-title, .changepassword-path, .register-profile-path, .login-one-path {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -169,10 +169,6 @@ fieldset {
 .send-spancontainer{
     font-family: 'Roboto Condensed', sans-serif;
     max-width: 70%;
-}
-
-.p-dspancontainer{
-    max-width: 50%;
 }
 
 .p-dcollapse{
@@ -283,8 +279,12 @@ footer{
     }
 
     .container-form {
-        margin-top: 5%;
+        margin-top: 2%;
         padding: 1%;
+    }
+
+    .login-one-path{
+        max-width: 100%;
     }
 
     fieldset {
@@ -304,7 +304,7 @@ footer{
         max-width: 100%;
     }
 
-    .p-dspancontainer{
+    .detail-path{
         max-width: 100%;
     }
 
@@ -313,6 +313,14 @@ footer{
     }
 
     .container-form{
+        max-width: 100%;
+    }
+
+    .changepassword-path{
+        padding: 0%!;
+    }
+
+    .changepassword-path{
         max-width: 100%;
     }
 
@@ -346,6 +354,10 @@ footer{
         width: 120%;
     }
     
+    .register-profile-path{
+        margin: 0%;
+        max-width: 100%;
+    }
 }
 
 @media only screen and (max-width: 991px){
@@ -381,6 +393,10 @@ footer{
         padding: 2.5%;
     }
 
+    .changepassword-path{
+        max-width: 70%;
+    }
+
     .send-spancontainer{
         max-width: 70%;
 
@@ -395,8 +411,13 @@ footer{
         max-width: 70%;
     }
 
-    .p-dspancontainer{
+    .detail-path{
         max-width: 70%;
+    }
+
+    .register-profile-path{
+        margin: 0%;
+        max-width: 100%;
     }
 
     .submit-filter{
@@ -421,6 +442,14 @@ footer{
         max-width: 55%!important;
     }
 
+    .login-one-path{
+        max-width: 100%;
+    }
+
+    .changepassword-path{
+        max-width: 55%;
+    }
+
     .send-spancontainer{
         max-width: 55%;
     }
@@ -430,7 +459,7 @@ footer{
         max-width: 50%;
     }
 
-    .p-dspancontainer{
+    .detail-path{
         max-width: 50%;
     }
 

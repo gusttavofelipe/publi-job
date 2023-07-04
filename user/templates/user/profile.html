@@ -4,12 +4,13 @@
 {% block content %}
 
 <section class="section-profile">
-    <div class="container py-5">
-      <div class="row">
-        <div class="col">
-        </div>
+    <div class="container pt-3">
+      <div class="container register-profile-path h5 pb-3">
+        <span class="">
+          <a class="text-success" href="{% url 'vacancies:home' %}">Home</a> /
+          <a class="text-success" href="{% url  'user:user_profile'%}">Profile</a>
+        </span>
       </div>
-  
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4 shadow-sm card-size p-3 mb-5 bg-white rounded">
