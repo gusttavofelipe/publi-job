@@ -13,6 +13,14 @@ p {
     font-size: large;
 }
 
+.text-decoration-none{
+    text-decoration: none;
+}
+
+.float-right{
+    float: right;
+}
+
 .img-fluid {
     height: auto !important;
 }
