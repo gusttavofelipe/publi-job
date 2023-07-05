@@ -53,7 +53,7 @@
                         {% endfor %}
                     </select>
                 
-                <input type="search" name="search" class="form-control input-form" placeholder="Profession, Job Role, etc...">
+                <input type="search" name="search" class="form-control input-form" value="{{ request.GET.search }}" placeholder="Profession, Job Role, etc...">
                     
                 <button type="submit" value="{{ request.GET.search }}" class="btn btn-dark"> 
                     <span class="mr-1 submit-filter">Filter</span>
