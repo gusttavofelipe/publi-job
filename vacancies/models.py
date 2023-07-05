@@ -10,6 +10,7 @@ from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 
 class Vacancy(models.Model):
     name = models.CharField('Name', max_length=255)
+    visibility = models.BooleanField('Visible', default=False)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     contact_number = models.PositiveBigIntegerField('Phone number')
     contact_whatsapp = models.PositiveBigIntegerField('WhatsApp')

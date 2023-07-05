@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from vacancies.models import Vacancy
 from .forms import VacancyForm
 from django.views.generic.list import ListView
@@ -12,6 +14,9 @@ class VacancyHome(ListView):
     template_name = 'vacancies/index.html'
     context_object_name = 'vacancies'
 
+    def get_queryset(self):
+        return Vacancy.objects.filter(visibility=True)
+
 
 def vacancy_detail_view(request, pk):
     context ={}
@@ -23,7 +28,7 @@ class VacancySearch(VacancyHome):
     template_name = 'vacancies/search.html'
     
     def get_queryset(self):
-        qs = Vacancy.objects.all()
+        qs = Vacancy.objects.filter(visibility=True)
 
 
         search = self.request.GET.get('search')
