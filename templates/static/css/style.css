@@ -13,6 +13,10 @@ p {
     font-size: large;
 }
 
+.pl-nav-item{
+    padding-left: 10px;
+}
+
 .text-decoration-none{
     text-decoration: none;
 }
