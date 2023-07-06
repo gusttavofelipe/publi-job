@@ -126,16 +126,16 @@ class UserProfile(ListView):
     template_name = 'user/profile.html'
 
 
-class EditProfile(UpdateView):
+class EditUserInformation(UpdateView):
     template_name = 'user/edit.html'
     model = User
     fields = ['first_name', 'last_name', 'email', 'username']
     template_name_suffix = "_update_form"
     success_url = reverse_lazy('vacancies:home')
 
-    
     def get_object(self):
         return self.request.user
+    
 
 class ChangePassword(PasswordChangeView):
     template_name='user/change_password.html'
