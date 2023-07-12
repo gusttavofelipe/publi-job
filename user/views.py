@@ -86,11 +86,7 @@ class UserRegister(BaseRegister):
                 login(self.request, user=user)
 
 
-        messages.success(
-            self.request,
-            'Registered successfully'
-        )
-        
+        messages.success(self.request, 'Successful registration')
         return redirect('vacancies:home') 
         
     
@@ -102,21 +98,25 @@ class UserLogin(BaseRegister):
         password = self.request.POST.get('password')
 
         if not username or not password:
+            messages.error(self.request, 'Wrong username or password')
             return redirect('user:user_login')
 
         user = authenticate(
             self.request, username=username, password=password)
 
         if not user:
+            messages.error(self.request, 'Wrong username or password')
             return redirect('user:user_login')
 
         login(self.request, user=user)
+        messages.success(self.request, 'login successful')
         return redirect('vacancies:home')
 
 
 class UserLogout(BaseRegister):
     def get(self, *args, **kwargs):
         logout(self.request)
+        messages.info(self.request, 'You are logged out')
         return redirect('vacancies:home')
 
 
@@ -134,8 +134,9 @@ class EditUserInformation(UpdateView):
     success_url = reverse_lazy('vacancies:home')
 
     def get_object(self):
+        messages.success(self.request, 'Successfully changed')
         return self.request.user
-    
+
 
 class ChangePassword(PasswordChangeView):
     template_name='user/change_password.html'

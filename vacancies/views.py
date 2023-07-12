@@ -7,6 +7,7 @@ from django.shortcuts import render, redirect
 from django.db.models import Q, Case, When
 from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 from choices.stt_choices import STATE_CHOICES
+from django.contrib import messages
 
 
 class VacancyHome(ListView):
@@ -15,6 +16,7 @@ class VacancyHome(ListView):
     context_object_name = 'vacancies'
 
     def get_queryset(self):
+        messages.success(self.request, 'Successful registration')
         return Vacancy.objects.filter(visibility=True)
 
 
@@ -131,7 +133,7 @@ def send_vacancy(request):
         form = VacancyForm(request.POST)
         if form.is_valid():
             form.save()
-
+            messages.success(request, 'Vacancy sent')
             return redirect('vacancies:home')
     else:
         form = VacancyForm()

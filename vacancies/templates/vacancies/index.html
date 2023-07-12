@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h5{% if message.tags %} class=" li-message {{ message.tags }}"{% endif %}>{{ message }}</h5>
+    <a class="close">&times;</a>
+    <script src="{% static 'js/myjs.js' %}"></script>
+    {% endfor %}
+</ul>
 
+{% endif %}
 <div class="container-fluid mb-1 p-0">
     <div class="container-fluid bg-banner flex">
         <img src="{% static 'img/ba.png' %}" class="img-fluid" alt="">

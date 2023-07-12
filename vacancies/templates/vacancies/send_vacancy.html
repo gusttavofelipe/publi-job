@@ -3,6 +3,16 @@
 
 
 {% block content %}
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <h4{% if message.tags %} class=" li-message {{ message.tags }}"{% endif %}>{{ message }}</h4>
+    <a class="close">&times;</a>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
 <div class="container-fluid mb-5 mt-3">
 
   <div class="container send-spancontainer h5 pb-3">

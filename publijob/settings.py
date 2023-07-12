@@ -14,6 +14,7 @@ from pathlib import Path
 import os
 
 from env import USER_DB, PASSWORD_DB
+from django.contrib.messages import constants
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,13 +54,13 @@ INSTALLED_APPS = [
     'vacancies',
     'user',
     'crispy_forms',
-    'crispy_bootstrap3',
+    'crispy_bootstrap4',
     'widget_tweaks',
 ]
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap3"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
-CRISPY_TEMPLATE_PACK = "bootstrap3"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Django Summernote
 INSTALLED_APPS += ('django_summernote', )
@@ -158,3 +159,10 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS = {
+    constants.ERROR: ' alert alert-danger',
+    constants.WARNING: 'alert alert-warning',
+    constants.SUCCESS: 'alert alert-success',
+    constants.INFO: 'alert alert-info',
+}
