@@ -16,7 +16,6 @@ class VacancyHome(ListView):
     context_object_name = 'vacancies'
 
     def get_queryset(self):
-        messages.success(self.request, 'Successful registration')
         return Vacancy.objects.filter(visibility=True)
 
 

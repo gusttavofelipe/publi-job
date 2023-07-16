@@ -296,12 +296,6 @@ footer{
     }
 
 
-/* constants.ERROR: ' alert-success',
-constants.WARNING: 'alert-danger',
-constants.DEBUG: 'alert-info',
-constants.SUCCESS: 'alert-success',
-constants.INFO: 'alert-info', */
-
 @media only screen and (max-width: 575px){
     .vacancy-card{
         height: 270px;

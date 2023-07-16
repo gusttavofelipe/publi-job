@@ -143,3 +143,9 @@ class ChangePassword(PasswordChangeView):
     form_class = PasswordChangeForm
     success_url = reverse_lazy('vacancies:home')
 
+
+    # def get(self):
+    #     messages.success(self.request, 'Successfully changed')
+    #     return 
+
+
