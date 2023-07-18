@@ -86,8 +86,11 @@ class UserRegister(BaseRegister):
                 login(self.request, user=user)
 
 
-        messages.success(self.request, 'Successful registration')
-        return redirect('vacancies:home') 
+        messages.success(
+            self.request,
+              f'Successful registration.\n Fill out the form below to submit a vacancy.'
+              )
+        return redirect('vacancies:send_vacancy') 
         
     
 class UserLogin(BaseRegister):
