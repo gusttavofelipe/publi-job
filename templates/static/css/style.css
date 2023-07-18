@@ -247,14 +247,13 @@ footer{
     display:inline-flex;
 }
 
-/* ALERTS */
+/* DJANGO MESSAGES */
 .alert{
     max-width:100%;
     margin:0%;
     padding:13px;
     position:relative;
     border-radius:5px;
-    /* box-shadow:0 0 15px 5px #ccc; */
     }
 
 .messages{
@@ -262,18 +261,6 @@ footer{
     margin: 0%;
     padding: 0%;
 }
-
-/* .alert-success{
-}
-
-.alert-danger{
-}
-
-.alert-warning{
-}
-
-.alert-info{
-} */
 
 .li-message{
     display:inline-block;
@@ -285,14 +272,9 @@ footer{
     width:30px;
     height:30px;
     opacity:0.5;
-    border-width:1px;
-    border-style:solid;
     border-radius:50%;
-    right:15px;
-    top:25px;
-    text-align:center;
-    font-size:1.6em;
-    cursor:pointer;
+    margin-top: 9px;
+    background-color: #05943f;
     }
 
 
