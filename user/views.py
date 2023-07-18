@@ -131,12 +131,12 @@ class EditUserInformation(UpdateView):
     model = User
     fields = ['first_name', 'last_name', 'email', 'username']
     template_name_suffix = "_update_form"
-    success_url = reverse_lazy('vacancies:home')
+    success_url = reverse_lazy('user:user_profile')
 
     def get_object(self):
         messages.success(self.request, 'Successfully changed')
         return self.request.user
-
+    
 
 class ChangePassword(PasswordChangeView):
     template_name='user/change_password.html'

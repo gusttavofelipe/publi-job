@@ -5,11 +5,11 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-        <h5{% if message.tags %} class=" li-message {{ message.tags }}"{% endif %}>{{ message }}</h5>
-        <button onclick="closeMessage()" class="close">&times;</button>
+        <h5{% if message.tags %} class=" li-message {{ message.tags }}"{% endif %}>{{ message }}
+            <button onclick="closeMessage()" class="close">&times;</button>
+        </h5>   
     {% endfor %}
 </ul>
-
 {% endif %}
 <div class="container-fluid mb-1 p-0">
     <div class="container-fluid bg-banner flex">

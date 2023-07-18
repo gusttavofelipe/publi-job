@@ -5,14 +5,12 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <h4{% if message.tags %} class=" li-message {{ message.tags }}"{% endif %}>{{ message }}</h4>
-    <a class="close">&times;</a>
+        <h5{% if message.tags %} class="li-message {{ message.tags }}"{% endif %}>{{ message }}
+            <button onclick="closeMessage()" class="close">&times;</button>
+        </h5>   
     {% endfor %}
 </ul>
-
 {% endif %}
-
-
 <section class="section-profile">
     <div class="container pt-3">
       <div class="container register-profile-path h5 pb-3">
