@@ -113,6 +113,8 @@ DATABASES = {
         'PORT': '3306',
         'USER': USER_DB,
         'PASSWORD': PASSWORD_DB,
+        'OPTIONS': {
+         "init_command": "SET foreign_key_checks = 0;",},
     }
 }
 

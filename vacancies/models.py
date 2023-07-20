@@ -3,9 +3,9 @@ from PIL import Image
 import os
 from django.conf import settings
 from categories.models import Category
+from occupation.models import Occupation
 
 from choices.stt_choices import STATE_CHOICES
-from choices.occupation_choices import OCCUPATION_AREA_CHOICES
 
 
 class Vacancy(models.Model):
@@ -15,11 +15,7 @@ class Vacancy(models.Model):
     contact_number = models.PositiveBigIntegerField('Phone number')
     contact_whatsapp = models.PositiveBigIntegerField('WhatsApp')
     contact_email = models.EmailField('E-mail')
-    occupation_area = models.CharField(
-        'Occupation area',
-        max_length=3,
-        choices=OCCUPATION_AREA_CHOICES
-        )
+    occupation_area = models.ForeignKey(Occupation, on_delete=models.DO_NOTHING)
     state = models.CharField('State', max_length=2, choices=STATE_CHOICES)
     city = models.CharField('City', max_length=255)
     number = models.IntegerField('Vacancies number', default=0)
