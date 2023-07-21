@@ -4,8 +4,7 @@ import os
 from django.conf import settings
 from categories.models import Category
 from occupation.models import Occupation
-
-from choices.stt_choices import STATE_CHOICES
+from state.models import State
 
 
 class Vacancy(models.Model):
@@ -15,8 +14,8 @@ class Vacancy(models.Model):
     contact_number = models.PositiveBigIntegerField('Phone number')
     contact_whatsapp = models.PositiveBigIntegerField('WhatsApp')
     contact_email = models.EmailField('E-mail')
-    occupation_area = models.ForeignKey(Occupation, on_delete=models.DO_NOTHING)
-    state = models.CharField('State', max_length=2, choices=STATE_CHOICES)
+    occupation_area = models.ForeignKey(Occupation, on_delete=models.CASCADE)
+    state = models.ForeignKey(State, on_delete=models.CASCADE)
     city = models.CharField('City', max_length=255)
     number = models.IntegerField('Vacancies number', default=0)
     date_posted = models.DateTimeField(auto_now=True)

@@ -56,8 +56,8 @@
                     
                     <select class="custom-select" id="inputGroupSelect02" name="state">
                         <option selected disabled>State</option>
-                        {% for state in vacancies %}
-                        <option>{{ state.get_state_display }}</option>
+                        {% for state in all_states %}
+                            <option>{{ state.get_name_display }}</option>
                         {% endfor %}
                     </select>
                 
