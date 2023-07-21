@@ -49,7 +49,9 @@
                 </div>
                     <select name="occupation" class="custom-select" id="inputGroupSelect01" >
                         <option selected disabled>Occupation</option>
-                        <option></option>
+                        {% for occupation in all_occupations %}
+                            <option>{{ occupation }}</option>
+                        {% endfor %}
                     </select>
                     
                     <select class="custom-select" id="inputGroupSelect02" name="state">
@@ -97,6 +99,7 @@
                         </h4>
                     <p class="pt-3">
                         <a href="#" class=" link-descri p-1 border rounded text-white pl-2 pr-2 pt-1" id="occopation">
+                            {{ vacancy.occupation_area }}                  
                         </a> 
                     </p>
                     <p class="vacancy-locate mb-0">

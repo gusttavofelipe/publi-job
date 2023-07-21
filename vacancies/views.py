@@ -1,5 +1,6 @@
 from typing import Any
 from django.db.models.query import QuerySet
+from occupation.models import Occupation
 from vacancies.models import Vacancy
 from .forms import VacancyForm
 from django.views.generic.list import ListView
@@ -36,29 +37,21 @@ class VacancySearch(VacancyHome):
         occupation = self.request.GET.get('occupation')
         state = self.request.GET.get('state')
 
-        if occupation and search and state:
-            for k, v in OCCUPATION_AREA_CHOICES:
-                if v == occupation:
-                    occupation = k
-            
+        if occupation and search and state:          
             for k, v in STATE_CHOICES:
                 if v == state:
                     state = k
                     
                     qs = qs.filter(
-                        Q(occupation_area__iexact=occupation) &
+                        Q(occupation_area__name=occupation) &
                         Q(name__icontains=search) &
                         Q(state__iexact=state) 
                     )
                     return qs
         
-        if occupation and search:
-            for k, v in OCCUPATION_AREA_CHOICES:
-                if v == occupation:
-                    occupation = k
-                    
+        if occupation and search:                  
                     qs = qs.filter(
-                        Q(occupation_area__iexact=occupation) &
+                        Q(occupation_area__name=occupation) &
                         Q(name__icontains=search)
                     )
                     return qs
@@ -75,29 +68,22 @@ class VacancySearch(VacancyHome):
                     return qs
                 
         if occupation and state:
-            for k, v in OCCUPATION_AREA_CHOICES:
-                if v == occupation:
-                    occupation = k
             
             for k, v in STATE_CHOICES:
                 if v == state:
                     state = k
                     
                     qs = qs.filter(
-                        Q(occupation_area__iexact=occupation) &
+                        Q(occupation_area__name=occupation) &
                         Q(state__iexact=state) 
                     )
                     return qs
                 
         if occupation:
-            for k, v in OCCUPATION_AREA_CHOICES:
-                if v == occupation:
-                    occupation = k
-                    
-                    qs = qs.filter(
-                        Q(occupation_area__iexact=occupation)
-                    )
-                    return qs
+            qs = qs.filter(
+                Q(occupation_area__name=occupation)
+            )
+            return qs
                 
         if state:
             for k, v in STATE_CHOICES:
