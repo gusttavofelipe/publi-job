@@ -105,7 +105,7 @@
                     <p class="vacancy-locate mb-0">
                         <small id="job-sm">Emprego em
                             <a href="">{{ vacancy.city }}</a> /
-                            <a href="">{{ vacancy.state }}
+                            <a href="{% url 'vacancies:state_filter' vacancy.state %}">{{ vacancy.state }}
                         </small></a>
                     </p>
                     </p>

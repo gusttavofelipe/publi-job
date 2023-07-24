@@ -20,15 +20,15 @@
         </h2>
         <div class="mb-5 pl-3">
           <span>
-            <a href="" class="btn btn-success">Emprego | {{ vacancy.occupation_area }}</a> 
-            <a href="" class="text-dark pl-dlocation">{{ vacancy.city }} - {{ vacancy.state }}</a>
+            <a href="" class="btn btn-success">Job | {{ vacancy.occupation_area }}</a> {{ vacancy.city }} -
+            <a href="{% url 'vacancies:state_filter' vacancy.state %}" class="text-dark pl-dlocation"> {{ vacancy.state }}</a>
           </span>
         </div>
             <ul class="list-group">
                 <li class="list-group-item">
                     <p class="detail-p">Location</p>
                     {{ vacancy.city }}, 
-                    {{ vacancy.state }}
+                    {{ vacancy.state.get_name_display }}
                 </li>
                 <li class="list-group-item">
                     <p class="detail-p">Vacancy</p>
