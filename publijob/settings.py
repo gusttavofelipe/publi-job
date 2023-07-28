@@ -34,9 +34,10 @@ ALLOWED_HOSTS = [
     '192.168.11.114',
     '127.0.0.1' ,
     '192.168.1.102',
+    '192.168.1.103',
     '192.168.1.104',
     '192.168.1.105',
-    '192.168.1.103',
+    '192.168.1.106',
     ]
 
 
@@ -97,6 +98,7 @@ TEMPLATES = [
                 'vacancies.context_processor.all_categories',
                 'vacancies.context_processor.all_occupations',
                 'vacancies.context_processor.all_states',
+                'vacancies.context_processor.all_profiles',
             ],
         },
     },

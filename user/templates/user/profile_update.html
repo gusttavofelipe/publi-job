@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+
+{% block content %}
+<div class="container-fluid mb-5 mt-3">
+  <div class="container changepassword-path h5 pb-0">
+    <span class="">
+      <a class="text-success" href="{% url 'vacancies:home'%}">Home</a> /
+      <a class="text-success" href="{% url 'user:user_profile'%}">Profile</a> /
+      <a class="text-success" href="{% url 'user:update_profile' request.user.profile.id %}">Update profile</a>
+    </span>
+  </div>
+  <div class="container container-form border rounded shadow mt-4">
+
+    <h1 class="p-2 pb-4 text-success font-weight-bold">Change data</h1>
+    <form method="post">
+      {% csrf_token %}
+      {% for field in form.visible_fields %}
+      <div class="form-group pl-2 pr-1">
+          <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+          {{ field|add_class:'form-control form-font' }}
+          {% for error in field.errors %}
+          <span class="help-block">{{ error }}</span>
+          {% endfor %}
+      </div>
+      {% endfor %}
+
+      <input class="btn btn-dark change-btn-mobile change-btn mt-1 ml-2" type="submit" value="Update">
+    </form>
+
+  </div>
+</div>
+{% endblock content %}

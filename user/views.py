@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from user.forms import ProfileForm
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import login, logout, authenticate
@@ -140,6 +140,23 @@ class EditUserInformation(UpdateView):
         messages.success(self.request, 'Successfully changed')
         return self.request.user
     
+def edit_profile_information(request, id):
+    profile = Profile.objects.get(id=id)
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, instance=profile)
+        if form.is_valid():
+            form.save()
+
+            messages.success(request, 'Successfully changed')
+            return redirect('user:user_profile')   
+    else:
+        form = ProfileForm(instance=profile)
+
+    return render(
+        request, 'user/profile_update.html', 
+        {'form': form}
+    )
+
 
 class ChangePassword(PasswordChangeView):
     template_name='user/change_password.html'
