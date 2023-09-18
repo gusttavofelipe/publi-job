@@ -3,7 +3,9 @@
 
 <img src="readme/index.png">
 <img src="readme/vacancy_detail.png">
-
+<img src="readme/register.png">
+<img src="readme/login.png">
+<img src="readme/profile.png">
 
 ## Instalação
 
