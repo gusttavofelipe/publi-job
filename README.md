@@ -13,8 +13,13 @@ Para executar o projeto, foi utilizado pyenv na versão 3.11.0 do python para o 
 
 Ao optar por usar pyenv, após a instalação, execute:
 ```bash
-pyenv virtualenv 3.11.0 publi
-pyenv activate publi
+make pyenv
+```
+<br>
+Em seguida, para instalar os pacotes:
+
+```bash
+make setup-dev
 ```
 
 ### Banco de dados
@@ -55,11 +60,10 @@ DATABASES = {
 ```
 
 <br>
-Execute os seguintes comandos para aplicar as migrações ao banco de dados:
+Execute o seguinte comando para aplicar as migrações ao banco de dados:
 
 ```bash
-python manage.py makemigrations
-python manage.py migrate
+make migrate-db
 ```
 
 ### Execução
@@ -67,4 +71,4 @@ python manage.py migrate
 ```bash
 python manage.py runserver
 ```
-Visite http://localhost:8000/ ou endereço do seu servidor em seu navegador para verificar se o site está funcionando corretamente.
+Digite http://localhost:8000/ ou endereço do seu servidor em seu navegador para acessar o site

@@ -3,4 +3,12 @@
 	@touch .env
 
 setup-dev: .env
-	@pip install -r > requirements.txt 
+	@pip install -r > requirements.txt
+
+pyenv:
+	@pyenv virtualenv 3.11.0 publi
+	@pyenv activate publi
+
+migrate-db:
+	@python manage.py makemigrations
+	@python manage.py migrate
