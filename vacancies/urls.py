@@ -10,6 +10,7 @@ urlpatterns = [
     path('search/', views.VacancySearch.as_view(), name='vacancy_search'),
     path('vacancy_category/<str:category>', views.VacancyCategory.as_view(), name='vacancy_category'),
     path('filter/by-state/<str:state>', views.VacancyStateFilter.as_view(), name='state_filter'),
+    path('filter/by-occupation/<str:occupation>', views.VacancyOccupationFilter.as_view(), name='occupation_filter'),
     path('send_vacancy/', views.send_vacancy, name='send_vacancy'),
 ]
 

@@ -112,7 +112,15 @@ class VacancyStateFilter(VacancyHome):
 
         qs = Vacancy.objects.filter(state__name=state)        
         return qs
+
+class VacancyOccupationFilter(VacancyHome):
+    template_name = 'vacancies/occupation_filter.html'
     
+    def get_queryset(self):
+        occupation = self.kwargs.get('occupation', None)
+
+        qs = Vacancy.objects.filter(occupation_area__name=occupation)        
+        return qs
 
 def send_vacancy(request):
     if request.method == 'POST':
