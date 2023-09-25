@@ -23,27 +23,7 @@ make setup-dev
 ```
 
 ### Banco de dados
-
-Abra seu terminal e acesse o MySQL:
-```bash
-mysql -u seu_usuario -p
-```
-Digite sua senha quando solicitado.
-
 <br>
-Crie um novo banco de dados para o projeto:
-
-```bash
-CREATE DATABASE publijob;
-```
-<br>
-Saia do terminal
-
-```bash
-exit
-```
-<br>
-
 No arquivo settings.py do projeto, em `DATABASES`, substitua as informações de conexão do banco de dados:
 
 ```bash
@@ -59,7 +39,6 @@ DATABASES = {
 }
 ```
 
-<br>
 Execute o seguinte comando para aplicar as migrações ao banco de dados:
 
 ```bash
@@ -67,6 +46,8 @@ make migrate-db
 ```
 
 ### Execução
+
+Use o seguinte comando para executar o projeto:
 
 ```bash
 python manage.py runserver
