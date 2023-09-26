@@ -293,6 +293,10 @@ footer{
     padding-bottom: 7.3%!important;
 }
 
+.nav-item{
+    padding-top: 1%;
+}
+
 @media only screen and (max-width: 575px){
     .vacancy-card{
         height: 270px;
