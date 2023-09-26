@@ -4,7 +4,10 @@ from vacancies.models import Vacancy
 from django_summernote.admin import SummernoteModelAdmin
 
 
-# class PostAdmin(SummernoteModelAdmin):
-#     summernote_fields = ('about_company',)
+class AdminTools(admin.ModelAdmin):
+    list_display = ('name', 'visibility',) 
+    list_filter = ('visibility',)
+    list_editable = ('visibility',  )
+    
 
-admin.site.register(Vacancy)
+admin.site.register(Vacancy, AdminTools)
