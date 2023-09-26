@@ -244,6 +244,7 @@ footer{
 .vacancy-card{
     height: 287px;
     min-width:220px;
+    max-width: 375px;
 }
 
 .shadow-card{
@@ -543,6 +544,10 @@ footer{
 
     .vacancy-card{
         padding: 6%!important;
+    }
+
+    .col-sm{
+        max-width: 285px;
     }
 }
 
