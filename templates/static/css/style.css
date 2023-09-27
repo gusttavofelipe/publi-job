@@ -427,6 +427,10 @@ footer{
         margin: 0%;
         max-width: 100%;
     }
+
+    .mb-login-form{
+        margin-bottom: 110px!important;
+    }
 }
 
 @media only screen and (max-width: 991px){
@@ -496,6 +500,10 @@ footer{
 
     .submit-filter{
         display: none;
+    }
+    
+    .container-login-form{
+        max-width: 58%!important;
     }
 }
 
