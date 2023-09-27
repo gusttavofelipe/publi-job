@@ -137,8 +137,12 @@ class EditUserInformation(UpdateView):
     success_url = reverse_lazy('user:user_profile')
 
     def get_object(self):
-        messages.success(self.request, 'Successfully changed')
         return self.request.user
+    
+    def form_valid(self, form):
+        messages.success(self.request, 'Successfully changed')
+        return super().form_valid(form)
+    
     
 def edit_profile_information(request, id):
     profile = Profile.objects.get(id=id)
