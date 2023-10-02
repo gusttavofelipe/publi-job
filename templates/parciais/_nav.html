@@ -37,6 +37,8 @@
                         {{ user.username }}
                         </a>
                         <div class="dropdown-menu p-1" aria-labelledby="dropdownMenuLink">
+                            <a class="nav-link btn my-vacancies-nav pl-0 pr-4" href="">My vacancies</a>
+                            <hr class="mt-0 mb-2">
                             <a class="nav-link bg-light" href="{% url 'user:user_profile' %}">View profile</a>
                             <a class="nav-link bg-light" href="{% url 'user:change_password' %}">Change password</a>
                             <a class="nav-link bg-light" href="{% url 'user:user_logout' %}">Logout</a>

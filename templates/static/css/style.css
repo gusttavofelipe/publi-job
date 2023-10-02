@@ -298,6 +298,18 @@ footer{
     padding-top: 1%;
 }
 
+.my-vacancies-nav{
+    background-color: #f8f9fa!important;
+    color: #05943f!important;
+}
+
+.my-vacancies-nav:hover{
+    text-decoration: none;
+    background-color: #05943f!important;
+    color: white!important;
+    border-radius: 5px;
+}
+
 @media only screen and (max-width: 575px){
     .vacancy-card{
         height: 270px;
