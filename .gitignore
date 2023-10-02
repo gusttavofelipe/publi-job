@@ -126,4 +126,4 @@ dmypy.json
 .pyre/
 gitignore
 
-*.txt
+relationships.txt
