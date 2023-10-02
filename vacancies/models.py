@@ -5,10 +5,12 @@ from django.conf import settings
 from categories.models import Category
 from occupation.models import Occupation
 from state.models import State
+from django.contrib.auth.models import User
 
 
 class Vacancy(models.Model):
     name = models.CharField('Name', max_length=255)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     visibility = models.BooleanField('Visible', default=False)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
     contact_number = models.PositiveBigIntegerField('Phone number')

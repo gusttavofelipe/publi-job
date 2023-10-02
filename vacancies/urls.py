@@ -12,5 +12,6 @@ urlpatterns = [
     path('filter/by-state/<str:state>', views.VacancyStateFilter.as_view(), name='state_filter'),
     path('filter/by-occupation/<str:occupation>', views.VacancyOccupationFilter.as_view(), name='occupation_filter'),
     path('send_vacancy/', views.send_vacancy, name='send_vacancy'),
+    path('my_vacancies/', views.my_vacancies, name='my_vacancies'),
 ]
 

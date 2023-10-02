@@ -9,4 +9,11 @@ class VacancyForm(forms.ModelForm):
         fields = '__all__'
         widgets = {
             'visibility': forms.HiddenInput(),
+            'user': forms.HiddenInput(),
         }
+
+    def __init__(self, *args, **kwargs):
+        user = kwargs.pop('user', None)
+        super(VacancyForm, self).__init__(*args, **kwargs)
+        if user:
+            self.instance.user = user

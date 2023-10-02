@@ -5,6 +5,8 @@ from django.shortcuts import render, redirect
 from django.db.models import Q
 from choices.stt_choices import STATE_CHOICES
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+
 
 
 class VacancyHome(ListView):
@@ -124,11 +126,18 @@ class VacancyOccupationFilter(VacancyHome):
 
 def send_vacancy(request):
     if request.method == 'POST':
-        form = VacancyForm(request.POST)
+        form = VacancyForm(request.POST, user=request.user)
         if form.is_valid():
             form.save()
             messages.success(request, 'Vacancy sent')
             return redirect('vacancies:home')
     else:
-        form = VacancyForm()
+        form = VacancyForm(user=request.user)
         return render(request, 'vacancies/send_vacancy.html', {'form': form})
+
+
+@login_required
+def my_vacancies(request):
+    user = request.user
+    vacancies = Vacancy.objects.filter(user=user)
+    return render(request, 'vacancies/my_vacancies.html', {'vacancies': vacancies})
