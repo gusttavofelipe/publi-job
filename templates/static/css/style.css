@@ -304,10 +304,12 @@ footer{
 }
 
 .my-vacancies-nav:hover{
-    text-decoration: none;
-    background-color: #05943f!important;
-    color: white!important;
-    border-radius: 5px;
+    background-color: #f0f0f0!important;
+}
+
+.my-vacancies{
+    background-color: #343a40;
+    border-radius: 15px 15px 0px 0px;
 }
 
 @media only screen and (max-width: 575px){
@@ -442,6 +444,15 @@ footer{
 
     .mb-login-form{
         margin-bottom: 110px!important;
+    }
+
+    .my-vacancies{
+        padding-left: 0%!important;
+        text-align: center!important;
+    }
+
+    .my-vacancies-span{
+        display: none!important;
     }
 }
 

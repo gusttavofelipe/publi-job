@@ -5,7 +5,12 @@
 {% if vacancies %}
 
 <div class="container">
-    <!-- <p><h1 class="text-center my-vacancies-title mb-5">My vacancies</h1></p> -->
+    <p>
+        <h3 class="text-center text-white my-vacancies-title mb-5 p-1 my-vacancies">
+            My vacancies
+            <span class="my-vacancies-span h5 text-success"> - manage your vacancies here</span>
+        </h3>
+    </p>
     <div class="row">
             {% for vacancy in vacancies %}
             <div class="col-sm">
