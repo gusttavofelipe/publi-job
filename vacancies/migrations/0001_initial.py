@@ -5,38 +5,88 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
-        ('state', '0001_initial'),
-        ('categories', '0001_initial'),
-        ('occupation', '0001_initial'),
+        ("state", "0001_initial"),
+        ("categories", "0001_initial"),
+        ("occupation", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Vacancy',
+            name="Vacancy",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255, verbose_name='Name')),
-                ('visibility', models.BooleanField(default=True, verbose_name='Visible')),
-                ('contact_number', models.PositiveBigIntegerField(verbose_name='Phone number')),
-                ('contact_whatsapp', models.PositiveBigIntegerField(verbose_name='WhatsApp')),
-                ('contact_email', models.EmailField(max_length=254, verbose_name='E-mail')),
-                ('city', models.CharField(max_length=255, verbose_name='City')),
-                ('number', models.IntegerField(default=0, verbose_name='Vacancies number')),
-                ('date_posted', models.DateTimeField(auto_now=True)),
-                ('img', models.ImageField(blank=True, null=True, upload_to='vacancies_img/%Y/%m/%d', verbose_name='Image')),
-                ('salary', models.CharField(max_length=255, verbose_name='Salary')),
-                ('about_company', models.TextField(verbose_name='About the company')),
-                ('requirements', models.TextField(verbose_name='Requirements')),
-                ('activities', models.TextField(verbose_name='Activities')),
-                ('benefits', models.TextField(blank=True, null=True, verbose_name='Benefits')),
-                ('schedule', models.TextField(verbose_name='Schedule')),
-                ('category', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='categories.category')),
-                ('occupation_area', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='occupation.occupation')),
-                ('state', models.ForeignKey(on_delete=django.db.models.deletion.DO_NOTHING, to='state.state')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=255, verbose_name="Name")),
+                (
+                    "visibility",
+                    models.BooleanField(default=True, verbose_name="Visible"),
+                ),
+                (
+                    "contact_number",
+                    models.PositiveBigIntegerField(verbose_name="Phone number"),
+                ),
+                (
+                    "contact_whatsapp",
+                    models.PositiveBigIntegerField(verbose_name="WhatsApp"),
+                ),
+                (
+                    "contact_email",
+                    models.EmailField(max_length=254, verbose_name="E-mail"),
+                ),
+                ("city", models.CharField(max_length=255, verbose_name="City")),
+                (
+                    "number",
+                    models.IntegerField(default=0, verbose_name="Vacancies number"),
+                ),
+                ("date_posted", models.DateTimeField(auto_now=True)),
+                (
+                    "img",
+                    models.ImageField(
+                        blank=True,
+                        null=True,
+                        upload_to="vacancies_img/%Y/%m/%d",
+                        verbose_name="Image",
+                    ),
+                ),
+                ("salary", models.CharField(max_length=255, verbose_name="Salary")),
+                ("about_company", models.TextField(verbose_name="About the company")),
+                ("requirements", models.TextField(verbose_name="Requirements")),
+                ("activities", models.TextField(verbose_name="Activities")),
+                (
+                    "benefits",
+                    models.TextField(blank=True, null=True, verbose_name="Benefits"),
+                ),
+                ("schedule", models.TextField(verbose_name="Schedule")),
+                (
+                    "category",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to="categories.category",
+                    ),
+                ),
+                (
+                    "occupation_area",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING,
+                        to="occupation.occupation",
+                    ),
+                ),
+                (
+                    "state",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.DO_NOTHING, to="state.state"
+                    ),
+                ),
             ],
         ),
     ]

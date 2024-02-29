@@ -6,7 +6,6 @@ import django.db.models.deletion
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -15,21 +14,110 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Profile',
+            name="Profile",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('whatsapp', models.PositiveBigIntegerField(verbose_name='WhatsApp')),
-                ('phone_number', models.PositiveBigIntegerField(verbose_name='Phone number')),
-                ('occupation', models.CharField(max_length=255, verbose_name='Occupation')),
-                ('schooling', models.CharField(choices=[('TEC', 'Technology'), ('SRV', 'Service'), ('CMC', 'Communication'), ('ACT', 'Accounting'), ('EDC', 'Education'), ('SEC', 'Security')], max_length=3, verbose_name='Schooling')),
-                ('user_type', models.CharField(choices=[('TEC', 'Technology'), ('SRV', 'Service'), ('CMC', 'Communication'), ('ACT', 'Accounting'), ('EDC', 'Education'), ('SEC', 'Security')], max_length=3, verbose_name='User type')),
-                ('about_you', models.TextField(verbose_name='About you')),
-                ('address', models.CharField(max_length=255, verbose_name='Address')),
-                ('zip_code', models.IntegerField(verbose_name='Zip code')),
-                ('neighborhood', models.CharField(max_length=255, verbose_name='Neighborhood')),
-                ('city', models.CharField(max_length=255, verbose_name='City')),
-                ('state', models.CharField(choices=[('AC', 'Acre'), ('AL', 'Alagoas'), ('AP', 'Amapá'), ('AM', 'Amazonas'), ('BA', 'Bahia'), ('CE', 'Ceará'), ('DF', 'Distrito Federal'), ('ES', 'Espírito Santo'), ('GO', 'Goiás'), ('MA', 'Maranhão'), ('MT', 'Mato Grosso'), ('MS', 'Mato Grosso do Sul'), ('MG', 'Minas Gerais'), ('PA', 'Pará'), ('PB', 'Paraíba'), ('PR', 'Paraná'), ('PE', 'Pernambuco'), ('PI', 'Piauí'), ('RJ', 'Rio de Janeiro'), ('RN', 'Rio Grande do Norte'), ('RS', 'Rio Grande do Sul'), ('RO', 'Rondônia'), ('RR', 'Roraima'), ('SC', 'Santa Catarina'), ('SP', 'São Paulo'), ('SE', 'Sergipe'), ('TO', 'Tocantins')], max_length=2, verbose_name='State')),
-                ('username_profile', models.OneToOneField(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='Username')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("whatsapp", models.PositiveBigIntegerField(verbose_name="WhatsApp")),
+                (
+                    "phone_number",
+                    models.PositiveBigIntegerField(verbose_name="Phone number"),
+                ),
+                (
+                    "occupation",
+                    models.CharField(max_length=255, verbose_name="Occupation"),
+                ),
+                (
+                    "schooling",
+                    models.CharField(
+                        choices=[
+                            ("TEC", "Technology"),
+                            ("SRV", "Service"),
+                            ("CMC", "Communication"),
+                            ("ACT", "Accounting"),
+                            ("EDC", "Education"),
+                            ("SEC", "Security"),
+                        ],
+                        max_length=3,
+                        verbose_name="Schooling",
+                    ),
+                ),
+                (
+                    "user_type",
+                    models.CharField(
+                        choices=[
+                            ("TEC", "Technology"),
+                            ("SRV", "Service"),
+                            ("CMC", "Communication"),
+                            ("ACT", "Accounting"),
+                            ("EDC", "Education"),
+                            ("SEC", "Security"),
+                        ],
+                        max_length=3,
+                        verbose_name="User type",
+                    ),
+                ),
+                ("about_you", models.TextField(verbose_name="About you")),
+                ("address", models.CharField(max_length=255, verbose_name="Address")),
+                ("zip_code", models.IntegerField(verbose_name="Zip code")),
+                (
+                    "neighborhood",
+                    models.CharField(max_length=255, verbose_name="Neighborhood"),
+                ),
+                ("city", models.CharField(max_length=255, verbose_name="City")),
+                (
+                    "state",
+                    models.CharField(
+                        choices=[
+                            ("AC", "Acre"),
+                            ("AL", "Alagoas"),
+                            ("AP", "Amapá"),
+                            ("AM", "Amazonas"),
+                            ("BA", "Bahia"),
+                            ("CE", "Ceará"),
+                            ("DF", "Distrito Federal"),
+                            ("ES", "Espírito Santo"),
+                            ("GO", "Goiás"),
+                            ("MA", "Maranhão"),
+                            ("MT", "Mato Grosso"),
+                            ("MS", "Mato Grosso do Sul"),
+                            ("MG", "Minas Gerais"),
+                            ("PA", "Pará"),
+                            ("PB", "Paraíba"),
+                            ("PR", "Paraná"),
+                            ("PE", "Pernambuco"),
+                            ("PI", "Piauí"),
+                            ("RJ", "Rio de Janeiro"),
+                            ("RN", "Rio Grande do Norte"),
+                            ("RS", "Rio Grande do Sul"),
+                            ("RO", "Rondônia"),
+                            ("RR", "Roraima"),
+                            ("SC", "Santa Catarina"),
+                            ("SP", "São Paulo"),
+                            ("SE", "Sergipe"),
+                            ("TO", "Tocantins"),
+                        ],
+                        max_length=2,
+                        verbose_name="State",
+                    ),
+                ),
+                (
+                    "username_profile",
+                    models.OneToOneField(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Username",
+                    ),
+                ),
             ],
         ),
     ]

@@ -7,7 +7,7 @@
     {% for message in messages %}
         <h5{% if message.tags %} class=" li-message {{ message.tags }}"{% endif %}>{{ message }}
             <button onclick="closeMessage()" class="close">&times;</button>
-        </h5>   
+        </h5>
     {% endfor %}
 </ul>
 {% endif %}
@@ -18,11 +18,11 @@
             <h1 class="banner-title main-text text-center">
                 {% if request.user.is_authenticated %}
                     <a href="{% url 'user:user_profile' %}" class="title-link border rounded
-                    text-white p-1 shadow rounded">Connect</a> 
+                    text-white p-1 shadow rounded">Connect</a>
                     with Opportunities
                 {% else %}
                     <a href="{% url 'user:user_register' %}" class="title-link border rounded
-                    text-white p-1 shadow rounded">Connect</a> 
+                    text-white p-1 shadow rounded">Connect</a>
                     with Opportunities
                 {% endif %}
             </h1>
@@ -36,7 +36,7 @@
                     <button type="button" class="btn btn-category-filter btn-outline-dark dropdown-toggle dropdown-toggle-split category_display"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Categories
                     </button>
-    
+
                     <div class="dropdown-menu">
                         {% for category in categories %}
                             <a href="{% url 'vacancies:vacancy_category' category.name %}" class="dropdown-item btn">
@@ -53,21 +53,21 @@
                             <option>{{ occupation }}</option>
                         {% endfor %}
                     </select>
-                    
+
                     <select class="custom-select" id="inputGroupSelect02" name="state">
                         <option selected disabled>State</option>
                         {% for state in all_states %}
                             <option>{{ state.get_name_display }}</option>
                         {% endfor %}
                     </select>
-                
+
                 <input type="search" name="search" class="form-control input-form" value="{{ request.GET.search }}" placeholder="Profession, Job Role, etc...">
-                    
-                <button type="submit" value="{{ request.GET.search }}" class="btn btn-dark"> 
+
+                <button type="submit" value="{{ request.GET.search }}" class="btn btn-dark">
                     <span class="mr-1 submit-filter">Filter</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
                     viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0
                     1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                     </svg>
                 </button>
@@ -99,8 +99,8 @@
                         </h4>
                     <p class="pt-3">
                         <a href="#" class=" link-descri p-1 border rounded text-white pl-2 pr-2 pt-1" id="occopation">
-                            {{ vacancy.occupation_area }}                  
-                        </a> 
+                            {{ vacancy.occupation_area }}
+                        </a>
                     </p>
                     <p class="vacancy-locate mb-0">
                         <small id="job-sm">Emprego em
