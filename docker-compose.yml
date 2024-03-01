@@ -12,3 +12,9 @@ services:
       - .env
     ports:
       - "5432:5432"
+
+  installer:
+    image: python:3.12
+    volumes:
+      - .:/app
+    command: pip install --no-cache-dir -r /app/requirements.txt
