@@ -1,3 +1,6 @@
+dependencies:
+	pip install -r requirements.txt
+
 makemigrations:
 	python3 manage.py makemigrations
 
@@ -6,3 +9,4 @@ migrate:
 
 runserver:
 	python3 manage.py runserver
+

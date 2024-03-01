@@ -33,11 +33,12 @@ docker-compose up -d
 ## Site
 #### Após as etapas anteriores serem bem sucedidas execute:
 ```shell
-make migrations
+make migrate
 ```
 Para executar as migrações no banco de dados
 
 ```shell
 make runserver
 ```
-Para subir o site
+Para subir o site. <br>
+Para ver, acesse: http://127.0.0.1:8000/
