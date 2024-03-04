@@ -21,6 +21,16 @@ def vacancy_detail_view(request, pk):
     return render(request, "vacancies/detail.html", context)
 
 
+class MyVacancies(ListView):
+    model = Vacancy
+    context_object_name = "vacancies"
+    template_name = "vacancies/my_vacancies.html"
+
+    def get_queryset(self):
+        qs = Vacancy.objects.filter(owner=self.request.user)
+        return qs
+
+
 class VacancySearch(VacancyHome):
     template_name = "vacancies/search.html"
 
@@ -91,9 +101,12 @@ def send_vacancy(request):
     if request.method == "POST":
         form = VacancyForm(request.POST)
         if form.is_valid():
-            form.save()
+            vacancy = form.save(commit=False)
+            vacancy.owner = request.user
+            vacancy.save()
+            messages.success(request, "Vacancy sent")
             messages.success(request, "Vacancy sent")
             return redirect("vacancies:home")
     else:
-        form = VacancyForm()
+        form = VacancyForm(user=request.user)
         return render(request, "vacancies/send_vacancy.html", {"form": form})

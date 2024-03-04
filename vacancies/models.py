@@ -2,9 +2,11 @@ from django.db import models
 from categories.models import Category
 from occupation.models import Occupation
 from state.models import State
+from django.contrib.auth.models import User
 
 
 class Vacancy(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField("Name", max_length=255)
     visibility = models.BooleanField("Visible", default=False)
     category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
