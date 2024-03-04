@@ -1,8 +1,7 @@
 SCHOOLING_CHOICES = (
-    ("TEC", "Technology"),
-    ("SRV", "Service"),
-    ("CMC", "Communication"),
-    ("ACT", "Accounting"),
-    ("EDC", "Education"),
-    ("SEC", "Security"),
+    ("HSC", "High school"),
+    ("ASD", "Associates degree"),
+    ("UND", "Undergraduate degree"),
+    ("MSD", "Master's degree"),
+    ("DCT", "Doctorate"),
 )

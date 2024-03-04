@@ -1,6 +1,7 @@
 from django.db import models
 from choices.schooling_choices import SCHOOLING_CHOICES
 from choices.stt_choices import STATE_CHOICES
+from choices.user_type import USER_TYPE_CHOICES
 from django.contrib.auth.models import User
 
 
@@ -19,7 +20,7 @@ class Profile(models.Model):
     user_type = models.CharField(
         "User type",
         max_length=3,
-        choices=SCHOOLING_CHOICES,
+        choices=USER_TYPE_CHOICES,
     )
     about_you = models.TextField("About you")
     address = models.CharField("Address", max_length=255)
