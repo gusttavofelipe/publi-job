@@ -3,8 +3,10 @@ from occupation.models import Occupation
 
 
 class Command(BaseCommand):
+    help = "Adds Vacancy occupations to the database"
+
     def handle(self, *args, **kwargs):
-        categories_list = [
+        occupation_list = [
             "Technology",
             "Service",
             "Communication",
@@ -13,7 +15,7 @@ class Command(BaseCommand):
             "Security",
         ]
 
-        for name in categories_list:
+        for name in occupation_list:
             if not Occupation.objects.filter(name=name).exists():
                 occupation = Occupation.objects.create(name=name)
                 occupation.save()

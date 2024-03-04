@@ -3,9 +3,10 @@ from categories.models import Category
 
 
 class Command(BaseCommand):
+    help = "Adds Vacancy categories to the database"
+
     def handle(self, *args, **kwargs):
         categories_list = [
-            "All",
             "Trainee",
             "Home Office",
         ]
