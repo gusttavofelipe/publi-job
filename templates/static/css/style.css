@@ -272,18 +272,21 @@ footer{
     border-radius:50%;
     }
 
+.my-vacancies-b{
+    padding-bottom: 10vh!important;
+}
 
 @media only screen and (max-width: 575px){
     .vacancy-card{
-        height: 270px;
+        height: 300px;
         max-width:90%;
         margin: auto;
         padding: 6%!important;
     }
 
-    /* .vacancy-locate{
+    .vacancy-locate{
         margin: 0px!important;
-    } */
+    }
 }
 
 @media only screen and (max-width: 767px){
@@ -436,10 +439,6 @@ footer{
         max-width: 70%;
     }
 
-    /* .my-vacancies-path{
-        max-width: 70%;
-    } */
-
     .send-spancontainer{
         max-width: 70%;
 
@@ -469,6 +468,12 @@ footer{
 }
 
 @media only screen and (min-width: 1190px) {
+    .vacancy-card{
+        height: 350px;
+        max-width:50%;
+        padding-top: 0%!important;
+    }
+
     .img-fluid {
         margin: 0% 0% 0% auto;
     }

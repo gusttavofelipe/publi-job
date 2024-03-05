@@ -29,6 +29,14 @@ class MyVacancies(ListView):
     def get_queryset(self):
         qs = Vacancy.objects.filter(owner=self.request.user)
         return qs
+    
+    def vacancies_exisist(self, *args, **kwargs):
+        queryset = self.get_queryset()
+        if not queryset.exists():
+            messages.info(self.request, "you have no vacancies")
+
+            return redirect("vacancies:send_vacancy")        
+        return super().get(self.request, *args, **kwargs)
 
 
 class VacancySearch(VacancyHome):
