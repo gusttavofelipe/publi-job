@@ -105,8 +105,14 @@ def send_vacancy(request):
             vacancy.owner = request.user
             vacancy.save()
             messages.success(request, "Vacancy sent")
-            messages.success(request, "Vacancy sent")
             return redirect("vacancies:home")
     else:
         form = VacancyForm(user=request.user)
         return render(request, "vacancies/send_vacancy.html", {"form": form})
+
+
+def delete_vacancy(request, pk):
+    obj = Vacancy.objects.get(id=pk)
+    obj.delete()
+    messages.warning(request, "Vacancy deleted")
+    return redirect("vacancies:my_vacancies")

@@ -9,6 +9,7 @@ urlpatterns = [
     path("vacancy/<int:pk>", views.vacancy_detail_view, name="vacancy_detail"),
     path("search/", views.VacancySearch.as_view(), name="vacancy_search"),
     path("my_vacancies/", views.MyVacancies.as_view(), name="my_vacancies"),
+    path("my_vacancies/delete/<int:pk>", views.delete_vacancy, name="delete_vacancy"),
     path(
         "vacancy_category/<str:category>",
         views.VacancyCategory.as_view(),

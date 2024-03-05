@@ -31,7 +31,6 @@ p {
 
 .form-font {
     font-family: 'Source Sans Pro', sans-serif !important;
-    /* font-size: 1px !important; */
 }
 
 .change-form-font{
@@ -281,6 +280,10 @@ footer{
         margin: auto;
         padding: 6%!important;
     }
+
+    /* .vacancy-locate{
+        margin: 0px!important;
+    } */
 }
 
 @media only screen and (max-width: 767px){
@@ -356,11 +359,8 @@ footer{
     }
 
     .changepassword-path{
-        padding: 0%!;
-    }
-
-    .changepassword-path{
-        max-width: 100%;
+        padding: 10%;
+        max-width: 70%;
     }
 
     .send-spancontainer{
@@ -435,6 +435,10 @@ footer{
     .changepassword-path{
         max-width: 70%;
     }
+
+    /* .my-vacancies-path{
+        max-width: 70%;
+    } */
 
     .send-spancontainer{
         max-width: 70%;
@@ -511,7 +515,6 @@ footer{
     .img-fluid {
         margin: 0% 0% 0% auto;
     }
-}
 
     .banner-title {
         margin: 0% auto 0% 0%;
@@ -519,4 +522,5 @@ footer{
 
     .email-contact {
         font-size: 14px !important;
+    }
 }
