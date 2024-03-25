@@ -23,7 +23,11 @@
 </div>
 
 <div class="container-fluid mb-1 p-0 my-vacancies-b">
-  <div class="container">
+  <div class="container mb-5">
+      {% if not  vacancies%}
+        <h1 class="text-center none-vacancies pt-3">VOCÊ NÃO POSSUI VAGAS PUBLICADAS (<a href="{% url 'vacancies:send_vacancy'%}">publicar</a>) <h1>
+
+      {% endif %}
       <div class="row">
       {% for vacancy in vacancies %}
       <div class="col-sm">

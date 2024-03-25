@@ -4,9 +4,16 @@
 
 .navbar,
 .a-nav,
-.nav-link {
+.nav-link{
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 20px !important;
+}
+h1{
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.none-vacancies {
+    margin-bottom: 30%;
 }
 
 p {
@@ -229,8 +236,8 @@ footer{
 }
 
 .vacancy-card{
-    height: 287px;
-    min-width:220px;
+    height: 300px;
+    min-width:250px;
 }
 
 .shadow-card{
@@ -471,7 +478,7 @@ footer{
     .vacancy-card{
         height: 350px;
         max-width:50%;
-        padding-top: 0%!important;
+        padding: 5% 5% 5% 5%!important;
     }
 
     .img-fluid {
@@ -511,9 +518,6 @@ footer{
         max-width: 50%;
     }
 
-    .vacancy-card{
-        padding: 6%!important;
-    }
 }
 
 @media only screen and (min-width: 1400px) {
